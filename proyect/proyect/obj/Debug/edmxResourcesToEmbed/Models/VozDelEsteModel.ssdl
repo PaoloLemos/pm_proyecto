@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VozDelEsteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="CI" />
+    </Key>
+    <Property Name="CI" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clima">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Temperatura" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="Icono" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ClimaPronostico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaHora" Type="datetime" Nullable="false" />
+    <Property Name="Temperatura" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="Icono" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Comentarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClienteCI" Type="varchar" MaxLength="20" />
+    <Property Name="ProgramaId" Type="int" />
+    <Property Name="Comentario" Type="nvarchar(max)" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conductores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramaId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Bio" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Cotizaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="TipoMoneda" Type="nvarchar" MaxLength="3" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogsAcciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Accion" Type="nvarchar" MaxLength="100" />
+    <Property Name="Entidad" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntidadId" Type="int" />
+  </EntityType>
+  <EntityType Name="Noticias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Contenido" Type="nvarchar(max)" />
+    <Property Name="FechaPublicacion" Type="date" Nullable="false" />
+    <Property Name="Imagen" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Patrocinadores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" />
+    <Property Name="Plan" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgramacionHoraria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramaId" Type="int" Nullable="false" />
+    <Property Name="DiaSemana" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoraInicio" Type="time" Precision="7" Nullable="false" />
+    <Property Name="HoraFin" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Programas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Imagen" Type="nvarchar" MaxLength="255" />
+    <Property Name="Descripcion" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contrasena" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Rol" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Comentari__Clien__49C3F6B7">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="CI" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="ClienteCI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comentari__Progr__4AB81AF0">
+    <End Role="Programas" Type="Self.Programas" Multiplicity="0..1" />
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="ProgramaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Conductor__Progr__4316F928">
+    <End Role="Programas" Type="Self.Programas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Conductores" Type="Self.Conductores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conductores">
+        <PropertyRef Name="ProgramaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LogsAccio__Usuar__5441852A">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="LogsAcciones" Type="Self.LogsAcciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LogsAcciones">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Programac__Progr__403A8C7D">
+    <End Role="Programas" Type="Self.Programas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProgramacionHoraria" Type="Self.ProgramacionHoraria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProgramacionHoraria">
+        <PropertyRef Name="ProgramaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VozDelEsteModelStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clima" EntityType="Self.Clima" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClimaPronostico" EntityType="Self.ClimaPronostico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comentarios" EntityType="Self.Comentarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conductores" EntityType="Self.Conductores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cotizaciones" EntityType="Self.Cotizaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogsAcciones" EntityType="Self.LogsAcciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Noticias" EntityType="Self.Noticias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patrocinadores" EntityType="Self.Patrocinadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgramacionHoraria" EntityType="Self.ProgramacionHoraria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Programas" EntityType="Self.Programas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Comentari__Clien__49C3F6B7" Association="Self.FK__Comentari__Clien__49C3F6B7">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comentari__Progr__4AB81AF0" Association="Self.FK__Comentari__Progr__4AB81AF0">
+      <End Role="Programas" EntitySet="Programas" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Conductor__Progr__4316F928" Association="Self.FK__Conductor__Progr__4316F928">
+      <End Role="Programas" EntitySet="Programas" />
+      <End Role="Conductores" EntitySet="Conductores" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LogsAccio__Usuar__5441852A" Association="Self.FK__LogsAccio__Usuar__5441852A">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="LogsAcciones" EntitySet="LogsAcciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Programac__Progr__403A8C7D" Association="Self.FK__Programac__Progr__403A8C7D">
+      <End Role="Programas" EntitySet="Programas" />
+      <End Role="ProgramacionHoraria" EntitySet="ProgramacionHoraria" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

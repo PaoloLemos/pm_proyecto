@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VozDelEsteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="CI" />
+    </Key>
+    <Property Name="CI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Comentarios" Relationship="Self.FK__Comentari__Clien__49C3F6B7" FromRole="Clientes" ToRole="Comentarios" />
+  </EntityType>
+  <EntityType Name="Clima">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Temperatura" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Icono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ClimaPronostico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaHora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Temperatura" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Icono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Comentarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClienteCI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramaId" Type="Int32" />
+    <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK__Comentari__Clien__49C3F6B7" FromRole="Comentarios" ToRole="Clientes" />
+    <NavigationProperty Name="Programas" Relationship="Self.FK__Comentari__Progr__4AB81AF0" FromRole="Comentarios" ToRole="Programas" />
+  </EntityType>
+  <EntityType Name="Conductores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramaId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Programas" Relationship="Self.FK__Conductor__Progr__4316F928" FromRole="Conductores" ToRole="Programas" />
+  </EntityType>
+  <EntityType Name="Cotizaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TipoMoneda" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Valor" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogsAcciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Accion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Entidad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntidadId" Type="Int32" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__LogsAccio__Usuar__5441852A" FromRole="LogsAcciones" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Noticias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FechaPublicacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Patrocinadores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Plan" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProgramacionHoraria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramaId" Type="Int32" Nullable="false" />
+    <Property Name="DiaSemana" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoraInicio" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="HoraFin" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Programas" Relationship="Self.FK__Programac__Progr__403A8C7D" FromRole="ProgramacionHoraria" ToRole="Programas" />
+  </EntityType>
+  <EntityType Name="Programas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Comentarios" Relationship="Self.FK__Comentari__Progr__4AB81AF0" FromRole="Programas" ToRole="Comentarios" />
+    <NavigationProperty Name="Conductores" Relationship="Self.FK__Conductor__Progr__4316F928" FromRole="Programas" ToRole="Conductores" />
+    <NavigationProperty Name="ProgramacionHoraria" Relationship="Self.FK__Programac__Progr__403A8C7D" FromRole="Programas" ToRole="ProgramacionHoraria" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LogsAcciones" Relationship="Self.FK__LogsAccio__Usuar__5441852A" FromRole="Usuarios" ToRole="LogsAcciones" />
+  </EntityType>
+  <Association Name="FK__Comentari__Clien__49C3F6B7">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="CI" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="ClienteCI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comentari__Progr__4AB81AF0">
+    <End Role="Programas" Type="Self.Programas" Multiplicity="0..1" />
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentarios">
+        <PropertyRef Name="ProgramaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Conductor__Progr__4316F928">
+    <End Role="Programas" Type="Self.Programas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Conductores" Type="Self.Conductores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Conductores">
+        <PropertyRef Name="ProgramaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LogsAccio__Usuar__5441852A">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="LogsAcciones" Type="Self.LogsAcciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LogsAcciones">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Programac__Progr__403A8C7D">
+    <End Role="Programas" Type="Self.Programas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProgramacionHoraria" Type="Self.ProgramacionHoraria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProgramacionHoraria">
+        <PropertyRef Name="ProgramaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VozDelEsteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Clima" EntityType="Self.Clima" />
+    <EntitySet Name="ClimaPronostico" EntityType="Self.ClimaPronostico" />
+    <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
+    <EntitySet Name="Conductores" EntityType="Self.Conductores" />
+    <EntitySet Name="Cotizaciones" EntityType="Self.Cotizaciones" />
+    <EntitySet Name="LogsAcciones" EntityType="Self.LogsAcciones" />
+    <EntitySet Name="Noticias" EntityType="Self.Noticias" />
+    <EntitySet Name="Patrocinadores" EntityType="Self.Patrocinadores" />
+    <EntitySet Name="ProgramacionHoraria" EntityType="Self.ProgramacionHoraria" />
+    <EntitySet Name="Programas" EntityType="Self.Programas" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK__Comentari__Clien__49C3F6B7" Association="Self.FK__Comentari__Clien__49C3F6B7">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comentari__Progr__4AB81AF0" Association="Self.FK__Comentari__Progr__4AB81AF0">
+      <End Role="Programas" EntitySet="Programas" />
+      <End Role="Comentarios" EntitySet="Comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Conductor__Progr__4316F928" Association="Self.FK__Conductor__Progr__4316F928">
+      <End Role="Programas" EntitySet="Programas" />
+      <End Role="Conductores" EntitySet="Conductores" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LogsAccio__Usuar__5441852A" Association="Self.FK__LogsAccio__Usuar__5441852A">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="LogsAcciones" EntitySet="LogsAcciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Programac__Progr__403A8C7D" Association="Self.FK__Programac__Progr__403A8C7D">
+      <End Role="Programas" EntitySet="Programas" />
+      <End Role="ProgramacionHoraria" EntitySet="ProgramacionHoraria" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

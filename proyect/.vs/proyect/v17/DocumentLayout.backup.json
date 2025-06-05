@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Equipo\\source\\repos\\proyect\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\source\\repos\\proyect\\proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Models\\Clientes.cs",
+              "RelativeDocumentMoniker": "proyect\\Models\\Clientes.cs",
+              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Models\\Clientes.cs",
+              "RelativeToolTip": "proyect\\Models\\Clientes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T17:06:23.481Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Clientes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Clientes\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T17:21:00.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T17:10:32.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\ClientesController.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAywE0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T17:08:26.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T17:06:08.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VozDelEsteModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Models\\VozDelEsteModel.edmx",
+              "RelativeDocumentMoniker": "proyect\\Models\\VozDelEsteModel.edmx",
+              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
+              "RelativeToolTip": "proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-06-05T16:59:19.878Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
