@@ -1,0 +1,17 @@
+﻿@model proyect.Models.ApiWeatherModel
+
+@if (Model != null)
+{
+    <h2>Clima actual en @Model.Name (@Model.Sys.Country)</h2>
+
+    <p><strong>Temperatura:</strong> @Model.Main.Temp °C</p>
+    <p><strong>Sensación térmica:</strong> @Model.Main.FeelsLike °C</p>
+    <p><strong>Humedad:</strong> @Model.Main.Humidity %</p>
+    <p><strong>Clima:</strong> @Model.Weather[0].Description</p>
+    <p><strong>Viento:</strong> @Model.Wind.Speed m/s</p>
+}
+else
+{
+    <p>No se pudo obtener la información del clima.</p>
+}
+

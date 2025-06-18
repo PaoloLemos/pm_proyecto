@@ -1,41 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\",
+  "WorkspaceRootPath": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\styles\\stylenav.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\styles\\stylenav.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\styles\\stylenav.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\styles\\stylenav.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\laura\\desktop\\pro\\pm_proyecto\\proyect\\proyect\\views\\apiweathermodel\\clima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\apiweathermodel\\clima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\controllers\\apiweathermodelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\apiweathermodelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\models\\apiweathermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\apiweathermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,103 +66,148 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Clientes.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Models\\Clientes.cs",
               "RelativeDocumentMoniker": "proyect\\Models\\Clientes.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\Clientes.cs",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Models\\Clientes.cs",
               "RelativeToolTip": "proyect\\Models\\Clientes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T17:06:23.481Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "proyect\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "proyect\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
+              "Title": "clima.cshtml",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\ApiWeatherModel\\clima.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\ApiWeatherModel\\clima.cshtml",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\ApiWeatherModel\\clima.cshtml",
+              "RelativeToolTip": "proyect\\Views\\ApiWeatherModel\\clima.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T17:40:46.226Z",
+              "WhenOpened": "2025-06-17T23:29:57.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
+              "Title": "ApiWeatherModel.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Models\\ApiWeatherModel.cs",
+              "RelativeDocumentMoniker": "proyect\\Models\\ApiWeatherModel.cs",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Models\\ApiWeatherModel.cs",
+              "RelativeToolTip": "proyect\\Models\\ApiWeatherModel.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAkwJIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T23:09:33.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Web.config",
+              "RelativeDocumentMoniker": "proyect\\Web.config",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Web.config",
+              "RelativeToolTip": "proyect\\Web.config",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-06-11T23:28:00.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-11T17:40:46.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "StyleNav.css",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleNav.css",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Styles\\StyleNav.css",
               "RelativeDocumentMoniker": "proyect\\Styles\\StyleNav.css",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleNav.css",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Styles\\StyleNav.css",
               "RelativeToolTip": "proyect\\Styles\\StyleNav.css",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEwAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-06-11T17:12:41.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "proyect\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "proyect\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAMwDUAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T02:13:56.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
-              "RelativeDocumentMoniker": "proyect\\Views\\Clientes\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
-              "RelativeToolTip": "proyect\\Views\\Clientes\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-05T17:21:00.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "proyect\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "proyect\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-05T17:10:32.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClientesController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ClientesController.cs",
-              "RelativeDocumentMoniker": "proyect\\Controllers\\ClientesController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ClientesController.cs",
-              "RelativeToolTip": "proyect\\Controllers\\ClientesController.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAADwv00AAAA/AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ApiWeatherModelController.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\ApiWeatherModelController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\ApiWeatherModelController.cs",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\ApiWeatherModelController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\ApiWeatherModelController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T17:08:26.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-17T23:26:55.941Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAMwDUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T02:13:56.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Clientes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Clientes\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-05T17:21:00.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\ClientesController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAADwv00AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T17:08:26.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "proyect\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Controllers\\HomeController.cs",
               "RelativeToolTip": "proyect\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -154,12 +215,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "VozDelEsteModel.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteModel.edmx",
+              "DocumentMoniker": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Models\\VozDelEsteModel.edmx",
               "RelativeDocumentMoniker": "proyect\\Models\\VozDelEsteModel.edmx",
-              "ToolTip": "C:\\Users\\Equipo\\source\\repos\\proyect\\proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
-              "RelativeToolTip": "..\\..\\..\\source\\repos\\proyect\\proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
+              "ToolTip": "C:\\Users\\Laura\\Desktop\\pro\\pm_proyecto\\proyect\\proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
+              "RelativeToolTip": "proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2025-06-05T16:59:19.878Z"
             }

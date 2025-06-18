@@ -1,10 +1,27 @@
 ﻿body {
 }
 
-.navbar-brand{
+.logo {
+    height: 149px;
+    border-radius: 20px;
+    border: 3px solid #007aff;
+    padding: 4px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar
+{
+    background-color: #fff;
+    height: 80px;
+    margin: 20px;
+    padding: 0.5rem;
+
+}
+
+.navbar-brand {
     font-weight: 500;
     color: blue;
-    font-size :24px;
+    font-size: 24px;
     transition: 0.3s color;
 }
 
