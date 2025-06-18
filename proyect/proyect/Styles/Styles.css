@@ -1,0 +1,11 @@
+﻿body {
+    background-color: dodgerblue; /* Azul oscuro */
+    color: white !important; /* Asegúrate de que el texto sea blanco */
+}
+
+    .btn-dark:hover
+    {
+    background-color: mediumblue; /* Azul más oscuro en hover */
+    color: white;
+    }
+}

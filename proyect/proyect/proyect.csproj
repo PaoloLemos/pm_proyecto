@@ -163,6 +163,7 @@
     <Compile Include="Controllers\ApiWeatherModelController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -241,6 +242,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="imagenes\clima\clear.jpg" />
+    <Content Include="imagenes\Liquid Clothing Logo.png" />
     <Content Include="imagenes\logo.png" />
     <Content Include="imagenes\logo1.png" />
     <Content Include="Models\VozDelEsteModel.Context.tt">
@@ -278,6 +281,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Styles\StyleNav.css" />
+    <Content Include="Styles\Styles.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -303,6 +307,7 @@
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\ApiWeatherModel\clima.cshtml" />
+    <Content Include="Views\LogIn\SolicitarDatosView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,17 +1,14 @@
 ﻿body {
 }
-
-.logo {
-    height: 149px;
-    border-radius: 20px;
-    border: 3px solid #007aff;
-    padding: 4px;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+main {
+    padding-top: 80px;
 }
+
+
 .navbar
 {
     background-color: #fff;
+    border-radius :20px;
     height: 80px;
     margin: 20px;
     padding: 0.5rem;
@@ -89,7 +86,7 @@
     }
 
 .hero-section {
-    background: linear-gradient(to bottom, #a2d9ff, #ffffff); /* Azul claro a blanco */
+    background: linear-gradient(to bottom, #2b7bb9, #1a2c3a); /* Azul oscuro tipo Twitter a azul muy oscuro/negro */
     color: #000; /* Texto oscuro para buen contraste */
     padding: 50px;
     background-size: cover;

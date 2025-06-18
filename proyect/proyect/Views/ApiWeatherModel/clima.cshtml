@@ -1,17 +1,57 @@
 ﻿@model proyect.Models.ApiWeatherModel
 
-@if (Model != null)
-{
-    <h2>Clima actual en @Model.Name (@Model.Sys.Country)</h2>
 
-    <p><strong>Temperatura:</strong> @Model.Main.Temp °C</p>
-    <p><strong>Sensación térmica:</strong> @Model.Main.FeelsLike °C</p>
-    <p><strong>Humedad:</strong> @Model.Main.Humidity %</p>
-    <p><strong>Clima:</strong> @Model.Weather[0].Description</p>
-    <p><strong>Viento:</strong> @Model.Wind.Speed m/s</p>
-}
-else
-{
-    <p>No se pudo obtener la información del clima.</p>
-}
 
+<main>
+
+    @if (Model != null)
+    {
+        var clima = Model.Weather[0].Description.ToLower();
+        var imagen = "";
+
+        //faltan imagenes
+
+        if (clima.Contains("lluvia"))
+        {
+            imagen = Url.Content("~/imagenes/clima/rain.jpg");
+        }
+        else if (clima.Contains("nubes"))
+        {
+            imagen = Url.Content("~/imagenes/clima/clouds.jpg");
+        }
+        else if (clima.Contains("tormenta"))
+        {
+            imagen = Url.Content("~/imagenes/clima/thunderstorm.jpg");
+        }
+        else if (clima.Contains("cielo claro") || clima.Contains("despejado"))
+        {
+            imagen = Url.Content("~/imagenes/clima/clear.jpg");
+        }
+        else if (clima.Contains("nieve"))
+        {
+            imagen = Url.Content("~/imagenes/clima/snow.jpg");
+        }
+        else if (clima.Contains("niebla") || clima.Contains("bruma"))
+        {
+            imagen = Url.Content("~/imagenes/clima/mist.jpg");
+        }
+        else
+        {
+            imagen = Url.Content("~/imagenes/clima/clear.jpg");
+        }
+        <h2>Clima actual en @Model.Name (@Model.Sys.Country)</h2>
+
+        <p><strong>Temperatura:</strong> @Model.Main.Temp °C</p>
+        <p><strong>Sensación térmica:</strong> @Model.Main.FeelsLike °C</p>
+        <p><strong>Humedad:</strong> @Model.Main.Humidity %</p>
+        <p><strong>Clima:</strong> @Model.Weather[0].Description</p>
+        <p><strong>Viento:</strong> @Model.Wind.Speed m/s</p>
+        <img id="imagenClima" alt="Clima del día" src="@imagen" />
+
+    }
+    else
+    {
+        <p>No se pudo obtener la información del clima.</p>
+    }
+
+</main>
