@@ -1,7 +1,17 @@
-﻿body {
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+
+
+/* 3) Haz que main ocupe como mínimo toda la altura disponible */
 main {
+    min-height: 100%;
     padding-top: 80px;
+    /* si prefieres basarlo en viewport:
+     min-height: 100vh; */
 }
 
 
@@ -92,4 +102,5 @@ main {
     background-size: cover;
     width: 100%;
     height: 100vh;
+
 }

@@ -169,6 +169,7 @@
     <Compile Include="Controllers\PatrocinadoresController.cs" />
     <Compile Include="Controllers\ProgramasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="filters\RolAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,6 +210,7 @@
     <Compile Include="Models\Usuarios.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VozDelEsteEntities.Partial.cs" />
     <Compile Include="Models\VozDelEsteModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

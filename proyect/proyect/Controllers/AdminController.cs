@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyect.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace proyect.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+        [RolAuthorize("administrador")]
         public ActionResult MenuAdmin()
         {
             return View();

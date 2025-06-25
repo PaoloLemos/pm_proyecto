@@ -1,28 +1,114 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<main>
 
+    <!-- Hero Section con vídeo de fondo y botón “Escucha en vivo” -->
+    <section id="hero" class="position-relative overflow-hidden mb-5" style="height: 60vh;">
+        <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
+            <source src="~/videos/hero.mp4" type="video/mp4">
+            Tu navegador no soporta vídeo.
+        </video>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+            <h1 class="display-4 fw-bold">Bienvenido a <br>Voz del Este</h1>
+            <p class="lead">La emisora que suena al ritmo de la costa</p>
+            <a href="#player" class="btn btn-lg btn-outline-light mt-3">Escucha en vivo</a>
+        </div>
+    </section>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
-    </div>
-</main>
+    <!-- Player en vivo -->
+    <section id="player" class="container mb-5">
+        <div class="text-white p-4 rounded d-flex align-items-center">
+            <div class="me-3">
+                <span class="badge bg-danger px-3 py-2">ON AIR</span>
+            </div>
+            <div class="flex-grow-1">
+                <audio controls class="w-100">
+                    <source src="https://stream.vozdeleste.fm/live.mp3" type="audio/mpeg">
+                    Tu navegador no soporta audio en vivo.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programación destacada -->
+    <section class="container mb-5">
+        <h2 class="mb-4">Programación destacada</h2>
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="~/imagenes/programa1.jpg" class="card-img-top" alt="Mañanas con Brisa">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Mañanas con Brisa</h5>
+                        <p class="card-text flex-grow-1">Lunes a viernes 8:00–10:00</p>
+                        <a href="@Url.Action("Programacion","Home")" class="btn btn-outline-primary mt-auto">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="~/imagenes/programa2.jpg" class="card-img-top" alt="Tarde de Clásicos">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Tarde de Clásicos</h5>
+                        <p class="card-text flex-grow-1">Lunes a viernes 15:00–17:00</p>
+                        <a href="@Url.Action("Programacion","Home")" class="btn btn-outline-primary mt-auto">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="~/imagenes/programa3.jpg" class="card-img-top" alt="Noche Electrónica">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Noche Electrónica</h5>
+                        <p class="card-text flex-grow-1">Viernes y sábados 22:00–00:00</p>
+                        <a href="@Url.Action("Programacion","Home")" class="btn btn-outline-primary mt-auto">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfiles de DJs (sin bg-light) -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Conoce a nuestros locutores</h2>
+            <div class="row gy-4">
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                    <img src="~/imagenes/dj1.jpg" class="rounded-circle mb-3" alt="DJ Aurora" width="140" height="140">
+                    <h5>DJ Aurora</h5>
+                    <p class="small text-muted">Próximo show: Sábado 18–20h</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                    <img src="~/imagenes/dj2.jpg" class="rounded-circle mb-3" alt="MC Brisa" width="140" height="140">
+                    <h5>MC Brisa</h5>
+                    <p class="small text-muted">Próximo show: Domingo 10–12h</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                    <img src="~/imagenes/dj3.jpg" class="rounded-circle mb-3" alt="Radio Sur" width="140" height="140">
+                    <h5>Radio Sur</h5>
+                    <p class="small text-muted">Próximo show: Miércoles 20–22h</p>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                    <img src="~/imagenes/dj4.jpg" class="rounded-circle mb-3" alt="Beat Costa" width="140" height="140">
+                    <h5>Beat Costa</h5>
+                    <p class="small text-muted">Próximo show: Viernes 12–14h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter (sin bg-primary) -->
+    <section class="container my-5">
+        <div class="p-5 text-white rounded text-center">
+            <h3>Suscríbete a nuestro boletín</h3>
+            <p>Recibe los mejores hits y noticias directo en tu inbox.</p>
+            <form class="row justify-content-center g-2">
+                <div class="col-auto">
+                    <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-light">Suscribirme</button>
+                </div>
+            </form>
+        </div>
+    </section>
+>
