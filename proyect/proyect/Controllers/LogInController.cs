@@ -48,5 +48,32 @@ namespace proyect.Controllers
 
 
         }
+        [HttpPost]
+        public ActionResult Index(string email, string password)
+        {
+            // Buscar usuario en la base
+            var usuario = db.Usuarios
+                            .FirstOrDefault(u => u.Email == email && u.Contrasena == password);
+
+            if (usuario != null)
+            {
+                // Guardar los datos del usuario logueado en sesión
+                Session["UsuarioId"] = usuario.Id;
+                Session["UsuarioEmail"] = usuario.Email;
+                Session["UsuarioRol"] = usuario.Rol;
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.Error = "Usuario o contraseña incorrectos.";
+            return RedirectToAction( "SolicitarDatosView", "LogIn");
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+                return RedirectToAction("Index", "Home");
+        }
+
     }
 }
