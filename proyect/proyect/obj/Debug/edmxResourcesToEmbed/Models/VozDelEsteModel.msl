@@ -122,11 +122,36 @@
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="VozDelEsteModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="RolID" ColumnName="RolID" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
-          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="VozDelEsteModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="VozDelEsteModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesPermisos">
+      <EntityTypeMapping TypeName="VozDelEsteModel.RolesPermisos">
+        <MappingFragment StoreEntitySet="RolesPermisos">
+          <ScalarProperty Name="rolPermisoId" ColumnName="rolPermisoId" />
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

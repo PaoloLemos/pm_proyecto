@@ -88,6 +88,13 @@
     <Property Name="Descripcion" Type="nvarchar(max)" />
     <Property Name="Plan" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="PermisoId" />
+    </Key>
+    <Property Name="PermisoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="ProgramacionHoraria">
     <Key>
       <PropertyRef Name="Id" />
@@ -107,6 +114,21 @@
     <Property Name="Imagen" Type="nvarchar" MaxLength="255" />
     <Property Name="Descripcion" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolesPermisos">
+    <Key>
+      <PropertyRef Name="rolPermisoId" />
+    </Key>
+    <Property Name="RolId" Type="int" Nullable="false" />
+    <Property Name="PermisoId" Type="int" Nullable="false" />
+    <Property Name="rolPermisoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <EntityType Name="Usuarios">
     <Key>
       <PropertyRef Name="Id" />
@@ -115,7 +137,7 @@
     <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Contrasena" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="Rol" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="RolID" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK__Comentari__Clien__49C3F6B7">
     <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
@@ -181,6 +203,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__RolesPerm__Permi__693CA210">
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="1" />
+    <End Role="RolesPermisos" Type="Self.RolesPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permisos">
+        <PropertyRef Name="PermisoId" />
+      </Principal>
+      <Dependent Role="RolesPermisos">
+        <PropertyRef Name="PermisoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RolesPerm__rolPe__68487DD7">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="RolesPermisos" Type="Self.RolesPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="RolesPermisos">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="RolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="VozDelEsteModelStoreContainer">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Clima" EntityType="Self.Clima" Schema="dbo" store:Type="Tables" />
@@ -191,8 +249,11 @@
     <EntitySet Name="LogsAcciones" EntityType="Self.LogsAcciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Noticias" EntityType="Self.Noticias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patrocinadores" EntityType="Self.Patrocinadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProgramacionHoraria" EntityType="Self.ProgramacionHoraria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Programas" EntityType="Self.Programas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolesPermisos" EntityType="Self.RolesPermisos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Comentari__Clien__49C3F6B7" Association="Self.FK__Comentari__Clien__49C3F6B7">
       <End Role="Clientes" EntitySet="Clientes" />
@@ -213,6 +274,18 @@
     <AssociationSet Name="FK__Programac__Progr__403A8C7D" Association="Self.FK__Programac__Progr__403A8C7D">
       <End Role="Programas" EntitySet="Programas" />
       <End Role="ProgramacionHoraria" EntitySet="ProgramacionHoraria" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RolesPerm__Permi__693CA210" Association="Self.FK__RolesPerm__Permi__693CA210">
+      <End Role="Permisos" EntitySet="Permisos" />
+      <End Role="RolesPermisos" EntitySet="RolesPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RolesPerm__rolPe__68487DD7" Association="Self.FK__RolesPerm__rolPe__68487DD7">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolesPermisos" EntitySet="RolesPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="Self.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

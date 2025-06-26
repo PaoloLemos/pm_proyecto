@@ -24,9 +24,10 @@ namespace proyect.Models
         public string Nombre { get; set; }
         public string Email { get; set; }
         public string Contrasena { get; set; }
-        public string Rol { get; set; }
+        public int RolID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LogsAcciones> LogsAcciones { get; set; }
+        public virtual Roles Roles { get; set; }
     }
 }

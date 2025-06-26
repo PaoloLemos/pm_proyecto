@@ -1,58 +1,129 @@
-﻿@{
+﻿@using proyect.Security
+
+@{
     ViewBag.Title = "MenuAdmin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2 class="mt-4 mb-4">Panel de Administración</h2>
 
+@using proyect.Security
+@{
+    ViewBag.Title = "Opciones de administrador";
+    var customUser = User as CustomPrincipal;
+}
+
 <div class="container">
+    <h2 class="mt-4 mb-4">Opciones de administrador</h2>
     <div class="row gy-4">
-        <!-- Modificar Usuarios -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Modificar Usuarios</h5>
-                    <p class="card-text flex-grow-1">
-                        Gestiona la lista de usuarios, crea, edita o elimina cuentas.
-                    </p>
-                    <a href="@Url.Action("Index", "Usuarios")"
-                       class="btn btn-primary mt-auto">
-                        Ir a Usuarios
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Modificar Clientes -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Modificar Clientes</h5>
-                    <p class="card-text flex-grow-1">
-                        Administra la información de tus clientes y sus datos.
-                    </p>
-                    <a href="@Url.Action("Index", "Clientes")"
-                       class="btn btn-primary mt-auto">
-                        Ir a Clientes
-                    </a>
+        @* Usuarios *@
+        @if (customUser?.HasPermission("Ver Usuarios") == true)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gestionar Usuarios</h5>
+                        <p class="card-text flex-grow-1">
+                            Crea, edita o elimina cuentas de usuario.
+                        </p>
+                        <a href="@Url.Action("Index","Usuarios")" class="btn btn-primary mt-auto">
+                            Ir a Usuarios
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
 
-        <!-- Modificar Noticias -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">Modificar Noticias</h5>
-                    <p class="card-text flex-grow-1">
-                        Crea, edita o elimina artículos y noticias de tu sitio.
-                    </p>
-                    <a href="@Url.Action("Index", "Noticias")"
-                       class="btn btn-primary mt-auto">
-                        Ir a Noticias
-                    </a>
+        @* Clientes *@
+        @if (customUser?.HasPermission("Ver Clientes") == true)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gestionar Clientes</h5>
+                        <p class="card-text flex-grow-1">
+                            Da de alta, modifica o elimina clientes.
+                        </p>
+                        <a href="@Url.Action("Index","Clientes")" class="btn btn-primary mt-auto">
+                            Ir a Clientes
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+
+        @* Patrocinadores *@
+        @if (customUser?.HasPermission("Ver Patrocinadores") == true)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gestionar Patrocinadores</h5>
+                        <p class="card-text flex-grow-1">
+                            Crea, edita o elimina patrocinadores y sus planes.
+                        </p>
+                        <a href="@Url.Action("Index","Patrocinadores")" class="btn btn-primary mt-auto">
+                            Ir a Patrocinadores
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @* Noticias *@
+        @if (customUser?.HasPermission("Ver Noticias") == true)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gestionar Noticias</h5>
+                        <p class="card-text flex-grow-1">
+                            Publica, edita o elimina artículos de noticias.
+                        </p>
+                        <a href="@Url.Action("Index","Noticias")" class="btn btn-primary mt-auto">
+                            Ir a Noticias
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @* Programas *@
+        @if (customUser?.HasPermission("Ver Programas") == true)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Gestionar Programas</h5>
+                        <p class="card-text flex-grow-1">
+                            Crea, edita o elimina programas de radio y asigna conductores.
+                        </p>
+                        <a href="@Url.Action("Index","Programas")" class="btn btn-primary mt-auto">
+                            Ir a Programas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @* Comentarios de clientes *@
+        @if (customUser?.HasPermission("Ver Comentarios") == true)
+        {
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Revisar Comentarios</h5>
+                        <p class="card-text flex-grow-1">
+                            Consulta los comentarios que dejan los clientes en los programas.
+                        </p>
+                        <a href="@Url.Action("Index","Comentarios")" class="btn btn-primary mt-auto">
+                            Ir a Comentarios
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
     </div>
 </div>

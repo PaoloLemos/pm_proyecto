@@ -37,5 +37,8 @@ namespace proyect.Models
         public virtual DbSet<ProgramacionHoraria> ProgramacionHoraria { get; set; }
         public virtual DbSet<Programas> Programas { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Permisos> Permisos { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<RolesPermisos> RolesPermisos { get; set; }
     }
 }

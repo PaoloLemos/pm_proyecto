@@ -22,6 +22,12 @@
         <AssociationConnector Association="VozDelEsteModel.FK__Conductor__Progr__4316F928" ManuallyRouted="false" />
         <AssociationConnector Association="VozDelEsteModel.FK__LogsAccio__Usuar__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="VozDelEsteModel.FK__Programac__Progr__403A8C7D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VozDelEsteModel.Permisos" Width="1.5" PointX="10.375" PointY="1.5" />
+        <EntityTypeShape EntityType="VozDelEsteModel.Roles" Width="1.5" PointX="3.5" PointY="0.75" />
+        <EntityTypeShape EntityType="VozDelEsteModel.RolesPermisos" Width="1.5" PointX="5.75" PointY="12" />
+        <AssociationConnector Association="VozDelEsteModel.FK__RolesPerm__rolPe__6383C8BA" />
+        <AssociationConnector Association="VozDelEsteModel.FK_Usuarios_Roles" />
+        <AssociationConnector Association="VozDelEsteModel.FK__RolesPerm__Permi__693CA210" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

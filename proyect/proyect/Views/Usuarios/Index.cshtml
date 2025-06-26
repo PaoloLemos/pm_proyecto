@@ -1,51 +1,57 @@
 ﻿@model IEnumerable<proyect.Models.Usuarios>
+@using proyect.Security
+
 
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contrasena)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rol)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contrasena)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rol)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@{
+    ViewBag.Title = "Index";
+    var customUser = User as CustomPrincipal;
 }
 
+<h2>Usuarios</h2>
+
+<p>
+    @* Solo quien pueda modificar usuarios puede crear uno nuevo *@
+    @if (customUser?.HasPermission("Modificar Usuarios") == true)
+    {
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    }
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Nombre)</th>
+            <th>@Html.DisplayNameFor(m => m.Email)</th>
+            <th>@Html.DisplayNameFor(m => m.Contrasena)</th>
+            <th>Rol</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Nombre)</td>
+            <td>@Html.DisplayFor(m => item.Email)</td>
+            <td>@Html.DisplayFor(m => item.Contrasena)</td>
+            <td>@Html.DisplayFor(m => item.Roles.Nombre)</td>
+            <td>
+                @if (customUser?.HasPermission("Modificar Usuarios") == true)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-warning" })
+                    @: | 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
+                }
+                @if (customUser?.HasPermission("Ver Usuarios") == true)
+                {
+                    @: | 
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-info" })
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
 </table>

@@ -163,13 +163,13 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ApiWeatherModelController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ComentariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />
     <Compile Include="Controllers\PatrocinadoresController.cs" />
     <Compile Include="Controllers\ProgramasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
-    <Compile Include="filters\RolAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,10 +201,19 @@
     <Compile Include="Models\Patrocinadores.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Permisos.cs">
+      <DependentUpon>VozDelEsteModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ProgramacionHoraria.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Programas.cs">
+      <DependentUpon>VozDelEsteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles.cs">
+      <DependentUpon>VozDelEsteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RolesPermisos.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuarios.cs">
@@ -227,6 +236,8 @@
       <DependentUpon>VozDelEsteModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="Security\PermisoAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -357,6 +368,11 @@
     <Content Include="Views\Programas\Edit.cshtml" />
     <Content Include="Views\Programas\Index.cshtml" />
     <Content Include="Views\Admin\MenuAdmin.cshtml" />
+    <Content Include="Views\Comentarios\Create.cshtml" />
+    <Content Include="Views\Comentarios\Delete.cshtml" />
+    <Content Include="Views\Comentarios\Details.cshtml" />
+    <Content Include="Views\Comentarios\Edit.cshtml" />
+    <Content Include="Views\Comentarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

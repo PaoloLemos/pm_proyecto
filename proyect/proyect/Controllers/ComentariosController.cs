@@ -7,132 +7,119 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using proyect.Models;
-using proyect.Security;
 
 namespace proyect.Controllers
 {
-    public class UsuariosController : Controller
+    public class ComentariosController : Controller
     {
         private VozDelEsteEntities db = new VozDelEsteEntities();
 
-        // GET: Usuarios
-        [Permiso(NombrePermiso = "Ver Clientes")]
+        // GET: Comentarios
         public ActionResult Index()
         {
-            return View(db.Usuarios.ToList());
+            var comentarios = db.Comentarios.Include(c => c.Clientes).Include(c => c.Programas);
+            return View(comentarios.ToList());
         }
 
-        // GET: Usuarios/Details/5
-        [Permiso(NombrePermiso = "Ver Clientes")]
+        // GET: Comentarios/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuarios usuarios = db.Usuarios.Find(id);
-            if (usuarios == null)
+            Comentarios comentarios = db.Comentarios.Find(id);
+            if (comentarios == null)
             {
                 return HttpNotFound();
             }
-            return View(usuarios);
+            return View(comentarios);
         }
 
-        // GET: Usuarios/Create
-        [Permiso(NombrePermiso = "Modificar Clientes")]
+        // GET: Comentarios/Create
         public ActionResult Create()
         {
-            ViewBag.Roles = db.Roles.ToList();
+            ViewBag.ClienteCI = new SelectList(db.Clientes, "CI", "Nombre");
+            ViewBag.ProgramaId = new SelectList(db.Programas, "Id", "Nombre");
             return View();
         }
 
-        // POST: Usuarios/Create
+        // POST: Comentarios/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Permiso(NombrePermiso = "Modificar Clientes")]
-
-        public ActionResult Create([Bind(Include = "Id,Nombre,Email,Contrasena,RolID")] Usuarios usuarios)
+        public ActionResult Create([Bind(Include = "Id,ClienteCI,ProgramaId,Comentario,Fecha")] Comentarios comentarios)
         {
             if (ModelState.IsValid)
             {
-                db.Usuarios.Add(usuarios);
+                db.Comentarios.Add(comentarios);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Roles = db.Roles.ToList();
-            return View(usuarios);
+
+            ViewBag.ClienteCI = new SelectList(db.Clientes, "CI", "Nombre", comentarios.ClienteCI);
+            ViewBag.ProgramaId = new SelectList(db.Programas, "Id", "Nombre", comentarios.ProgramaId);
+            return View(comentarios);
         }
 
-        // GET: Usuarios/Edit/5
-        [Permiso(NombrePermiso = "Modificar Clientes")]
-
+        // GET: Comentarios/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuarios usuarios = db.Usuarios.Find(id);
-            if (usuarios == null)
+            Comentarios comentarios = db.Comentarios.Find(id);
+            if (comentarios == null)
             {
                 return HttpNotFound();
             }
-
-            // Lleno el dropdown de roles
-            ViewBag.Roles = db.Roles
-                              .Select(r => new { r.RolId, r.Nombre })
-                              .ToList();
-
-            return View(usuarios);
+            ViewBag.ClienteCI = new SelectList(db.Clientes, "CI", "Nombre", comentarios.ClienteCI);
+            ViewBag.ProgramaId = new SelectList(db.Programas, "Id", "Nombre", comentarios.ProgramaId);
+            return View(comentarios);
         }
 
-        // POST: Usuarios/Edit/5
+        // POST: Comentarios/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Permiso(NombrePermiso = "Modificar Clientes")]
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Email,Contrasena,RolId")] Usuarios usuarios)
+        public ActionResult Edit([Bind(Include = "Id,ClienteCI,ProgramaId,Comentario,Fecha")] Comentarios comentarios)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuarios).State = EntityState.Modified;
+                db.Entry(comentarios).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Roles = db.Roles.Select(r => new { r.RolId, r.Nombre }).ToList();
-            return View(usuarios);
+            ViewBag.ClienteCI = new SelectList(db.Clientes, "CI", "Nombre", comentarios.ClienteCI);
+            ViewBag.ProgramaId = new SelectList(db.Programas, "Id", "Nombre", comentarios.ProgramaId);
+            return View(comentarios);
         }
 
-        // GET: Usuarios/Delete/5
-
-        [Permiso(NombrePermiso = "Modificar Clientes")]
-
+        // GET: Comentarios/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuarios usuarios = db.Usuarios.Find(id);
-            if (usuarios == null)
+            Comentarios comentarios = db.Comentarios.Find(id);
+            if (comentarios == null)
             {
                 return HttpNotFound();
             }
-            return View(usuarios);
+            return View(comentarios);
         }
 
-        // POST: Usuarios/Delete/5
-        [ValidateAntiForgeryToken]
-        [Permiso(NombrePermiso = "Modificar Clientes")]
+        // POST: Comentarios/Delete/5
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Usuarios usuarios = db.Usuarios.Find(id);
-            db.Usuarios.Remove(usuarios);
+            Comentarios comentarios = db.Comentarios.Find(id);
+            db.Comentarios.Remove(comentarios);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -7,56 +7,104 @@
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\styles\\stylenav.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\styles\\styleclima.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\styles\\styleclima.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\styles\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\styles\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\usuarios\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\usuarios\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\patrocinadores\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\patrocinadores\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\admin\\menuadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\admin\\menuadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\login\\solicitardatosview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\login\\solicitardatosview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\models\\vozdelesteentities.partial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\vozdelesteentities.partial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\comentarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\comentarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\filters\\rolauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\filters\\rolauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\usuarios\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\vozdelestemodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|c:\\users\\equipo\\desktop\\proyecto2025\\proyect\\proyect\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\vozdelesteentities.partial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\vozdelesteentities.partial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\security\\permisoattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\security\\permisoattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\security\\customprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\security\\customprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\login\\solicitardatosview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\login\\solicitardatosview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\apiweathermodel\\clima.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -87,10 +135,6 @@
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{18CFCBC3-BB26-4871-9079-14896CA3D483}|proyect\\proyect.csproj|solutionrelative:proyect\\views\\clientes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -102,11 +146,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "Clientes.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\Clientes.cs",
               "RelativeDocumentMoniker": "proyect\\Models\\Clientes.cs",
@@ -119,33 +163,262 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "proyect\\App_Start\\BundleConfig.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "proyect\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T21:09:51.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Delete.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Usuarios\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Delete.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Usuarios\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T17:26:47.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Create.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Usuarios\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T19:28:44.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Index.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Usuarios\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Index.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Usuarios\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T17:16:55.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Details.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Usuarios\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Details.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Usuarios\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T17:27:35.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Edit.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Usuarios\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Usuarios\\Edit.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Usuarios\\Edit.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T16:47:25.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Usuarios.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\Usuarios.cs",
               "RelativeDocumentMoniker": "proyect\\Models\\Usuarios.cs",
               "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\Usuarios.cs",
               "RelativeToolTip": "proyect\\Models\\Usuarios.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T18:02:10.478Z",
+              "WhenOpened": "2025-06-25T18:02:10.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\AdminController.cs*",
+              "RelativeToolTip": "proyect\\Controllers\\AdminController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T19:12:43.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StyleNav.css",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleNav.css",
+              "RelativeDocumentMoniker": "proyect\\Styles\\StyleNav.css",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleNav.css*",
+              "RelativeToolTip": "proyect\\Styles\\StyleNav.css*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-11T17:12:41.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Global.asax.cs",
+              "RelativeDocumentMoniker": "proyect\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Global.asax.cs",
+              "RelativeToolTip": "proyect\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T16:25:28.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "proyect\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "proyect\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAABEAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADQAAACTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-05T17:10:32.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
+              "Title": "MenuAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Admin\\MenuAdmin.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Admin\\MenuAdmin.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Admin\\MenuAdmin.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Admin\\MenuAdmin.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAACgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-24T23:06:27.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Styles.css",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\Styles.css",
+              "RelativeDocumentMoniker": "proyect\\Styles\\Styles.css",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\Styles.css",
+              "RelativeToolTip": "proyect\\Styles\\Styles.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-26T20:58:06.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StyleClima.css",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleClima.css",
+              "RelativeDocumentMoniker": "proyect\\Styles\\StyleClima.css",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleClima.css",
+              "RelativeToolTip": "proyect\\Styles\\StyleClima.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-06-26T20:58:05.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LogInController.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\LogInController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\LogInController.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\LogInController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\LogInController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAuwFMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T23:35:43.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Patrocinadores\\Delete.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\Patrocinadores\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Patrocinadores\\Delete.cshtml",
+              "RelativeToolTip": "proyect\\Views\\Patrocinadores\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-26T19:28:20.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ComentariosController.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ComentariosController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\ComentariosController.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ComentariosController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\ComentariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T18:05:46.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VozDelEsteModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteModel.edmx",
+              "RelativeDocumentMoniker": "proyect\\Models\\VozDelEsteModel.edmx",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
+              "RelativeToolTip": "proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-06-26T16:58:05.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "PermisoAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Security\\PermisoAttribute.cs",
+              "RelativeDocumentMoniker": "proyect\\Security\\PermisoAttribute.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Security\\PermisoAttribute.cs",
+              "RelativeToolTip": "proyect\\Security\\PermisoAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T16:14:23.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VozDelEsteEntities.Partial.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteEntities.Partial.cs",
+              "RelativeDocumentMoniker": "proyect\\Models\\VozDelEsteEntities.Partial.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteEntities.Partial.cs",
+              "RelativeToolTip": "proyect\\Models\\VozDelEsteEntities.Partial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T19:53:32.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CustomPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Security\\CustomPrincipal.cs",
+              "RelativeDocumentMoniker": "proyect\\Security\\CustomPrincipal.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Security\\CustomPrincipal.cs",
+              "RelativeToolTip": "proyect\\Security\\CustomPrincipal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T16:11:56.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "proyect\\Views\\Home\\Index.cshtml",
@@ -153,25 +426,35 @@
               "RelativeToolTip": "proyect\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAHIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T17:40:46.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T17:40:46.226Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "proyect\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "proyect\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "SolicitarDatosView.cshtml",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
+              "RelativeDocumentMoniker": "proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
+              "RelativeToolTip": "proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAUwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T15:50:03.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ProgramasController.cs",
+              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ProgramasController.cs",
+              "RelativeDocumentMoniker": "proyect\\Controllers\\ProgramasController.cs",
+              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ProgramasController.cs",
+              "RelativeToolTip": "proyect\\Controllers\\ProgramasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T19:12:43.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T22:57:45.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Web.config",
               "RelativeDocumentMoniker": "proyect\\Web.config",
@@ -184,97 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SolicitarDatosView.cshtml",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
-              "RelativeDocumentMoniker": "proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
-              "RelativeToolTip": "proyect\\Views\\LogIn\\SolicitarDatosView.cshtml",
-              "ViewState": "AgIAADIAAAAAAAAAAAAUwE8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-18T15:50:03.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LogInController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\LogInController.cs",
-              "RelativeDocumentMoniker": "proyect\\Controllers\\LogInController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\LogInController.cs",
-              "RelativeToolTip": "proyect\\Controllers\\LogInController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T23:35:43.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProgramasController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ProgramasController.cs",
-              "RelativeDocumentMoniker": "proyect\\Controllers\\ProgramasController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ProgramasController.cs",
-              "RelativeToolTip": "proyect\\Controllers\\ProgramasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T22:57:45.859Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MenuAdmin.cshtml",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Admin\\MenuAdmin.cshtml",
-              "RelativeDocumentMoniker": "proyect\\Views\\Admin\\MenuAdmin.cshtml",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Admin\\MenuAdmin.cshtml",
-              "RelativeToolTip": "proyect\\Views\\Admin\\MenuAdmin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-24T23:06:27.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StyleNav.css",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleNav.css",
-              "RelativeDocumentMoniker": "proyect\\Styles\\StyleNav.css",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Styles\\StyleNav.css*",
-              "RelativeToolTip": "proyect\\Styles\\StyleNav.css*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-11T17:12:41.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "VozDelEsteEntities.Partial.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteEntities.Partial.cs",
-              "RelativeDocumentMoniker": "proyect\\Models\\VozDelEsteEntities.Partial.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteEntities.Partial.cs",
-              "RelativeToolTip": "proyect\\Models\\VozDelEsteEntities.Partial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T19:53:32.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RolAuthorizeAttribute.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\filters\\RolAuthorizeAttribute.cs",
-              "RelativeDocumentMoniker": "proyect\\filters\\RolAuthorizeAttribute.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\filters\\RolAuthorizeAttribute.cs",
-              "RelativeToolTip": "proyect\\filters\\RolAuthorizeAttribute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-25T18:44:27.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 29,
               "Title": "NoticiasController.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\NoticiasController.cs",
               "RelativeDocumentMoniker": "proyect\\Controllers\\NoticiasController.cs",
@@ -286,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "proyect\\Controllers\\HomeController.cs",
@@ -294,12 +487,11 @@
               "RelativeToolTip": "proyect\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T17:06:08.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T17:06:08.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 26,
               "Title": "clima.cshtml",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\ApiWeatherModel\\clima.cshtml",
               "RelativeDocumentMoniker": "proyect\\Views\\ApiWeatherModel\\clima.cshtml",
@@ -311,19 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "VozDelEsteModel.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteModel.edmx",
-              "RelativeDocumentMoniker": "proyect\\Models\\VozDelEsteModel.edmx",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
-              "RelativeToolTip": "proyect\\Models\\VozDelEsteModel.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-06-05T16:59:19.878Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 28,
               "Title": "PatrocinadoresController.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\PatrocinadoresController.cs",
               "RelativeDocumentMoniker": "proyect\\Controllers\\PatrocinadoresController.cs",
@@ -335,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 30,
               "Title": "ApiWeatherModel.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Models\\ApiWeatherModel.cs",
               "RelativeDocumentMoniker": "proyect\\Models\\ApiWeatherModel.cs",
@@ -347,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 31,
               "Title": "ApiWeatherModelController.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ApiWeatherModelController.cs",
               "RelativeDocumentMoniker": "proyect\\Controllers\\ApiWeatherModelController.cs",
@@ -359,19 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\UsuariosController.cs",
-              "RelativeDocumentMoniker": "proyect\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\UsuariosController.cs",
-              "RelativeToolTip": "proyect\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAMwDUAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T02:13:56.322Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Views\\Clientes\\Create.cshtml",
               "RelativeDocumentMoniker": "proyect\\Views\\Clientes\\Create.cshtml",
@@ -383,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 32,
               "Title": "ClientesController.cs",
               "DocumentMoniker": "C:\\Users\\Equipo\\Desktop\\proyecto2025\\proyect\\proyect\\Controllers\\ClientesController.cs",
               "RelativeDocumentMoniker": "proyect\\Controllers\\ClientesController.cs",

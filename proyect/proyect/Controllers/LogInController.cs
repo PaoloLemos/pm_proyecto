@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace proyect.Controllers
 {
@@ -41,8 +42,30 @@ namespace proyect.Controllers
                     // 3. Login exitoso: guardo sesión y redirijo
                     Session["UsuarioId"] = usuario.Id;
                     Session["UsuarioEmail"] = usuario.Email;
-                    Session["UsuarioRol"] = usuario.Rol.ToLower();
-                    return RedirectToAction("Index", "Home");
+                    Session["UsuarioLogueado"] = true;
+
+                var permisos = db.RolesPermisos
+                        .Where(rp => rp.RolId == usuario.RolID)
+                        .Select(rp => rp.Permisos.Nombre)
+                        .ToList();
+                string userData = string.Join(",", permisos);
+                var ticket = new FormsAuthenticationTicket(
+                    version: 1,
+                    name: usuario.Nombre,
+                    issueDate: DateTime.Now,
+                    expiration: DateTime.Now.AddHours(8),
+                    isPersistent: false,
+                    userData: userData
+                );
+
+                string encryptedTicket = FormsAuthentication.Encrypt(ticket);
+                var cookie = new HttpCookie(
+                    FormsAuthentication.FormsCookieName,
+                    encryptedTicket
+                );
+                Response.Cookies.Add(cookie);
+
+                return RedirectToAction("Index", "Home");
                 }
 
                 // 4. Si falla: muestro error en la misma vista
@@ -50,11 +73,16 @@ namespace proyect.Controllers
                 return View("SolicitarDatosView");
             }
 
-            // Logout
-            public ActionResult Logout()
-            {
-                Session.Clear();
-                return RedirectToAction("Index", "Home");
-            }
+        // Logout
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logout()
+        {
+            // Borra la sesión y la cookie de FormsAuth
+            Session.Abandon();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
+
     }
+}

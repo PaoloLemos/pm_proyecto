@@ -124,8 +124,9 @@
     <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Contrasena" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Rol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="LogsAcciones" Relationship="Self.FK__LogsAccio__Usuar__5441852A" FromRole="Usuarios" ToRole="LogsAcciones" />
+    <Property Name="RolID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Roles" Relationship="VozDelEsteModel.FK_Usuarios_Roles" FromRole="Usuarios" ToRole="Roles" />
   </EntityType>
   <Association Name="FK__Comentari__Clien__49C3F6B7">
     <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
@@ -224,5 +225,83 @@
       <End Role="Programas" EntitySet="Programas" />
       <End Role="ProgramacionHoraria" EntitySet="ProgramacionHoraria" />
     </AssociationSet>
+    <EntitySet Name="Permisos" EntityType="VozDelEsteModel.Permisos" />
+    <EntitySet Name="Roles" EntityType="VozDelEsteModel.Roles" />
+    <EntitySet Name="RolesPermisos" EntityType="VozDelEsteModel.RolesPermisos" />
+    <AssociationSet Name="FK__RolesPerm__rolPe__6383C8BA" Association="VozDelEsteModel.FK__RolesPerm__rolPe__6383C8BA">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolesPermisos" EntitySet="RolesPermisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="VozDelEsteModel.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RolesPerm__Permi__693CA210" Association="VozDelEsteModel.FK__RolesPerm__Permi__693CA210">
+      <End Role="Permisos" EntitySet="Permisos" />
+      <End Role="RolesPermisos" EntitySet="RolesPermisos" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="PermisoId" />
+    </Key>
+    <Property Name="PermisoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RolesPermisos" Relationship="VozDelEsteModel.FK__RolesPerm__Permi__693CA210" FromRole="Permisos" ToRole="RolesPermisos" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RolesPermisos" Relationship="VozDelEsteModel.FK__RolesPerm__rolPe__6383C8BA" FromRole="Roles" ToRole="RolesPermisos" />
+    <NavigationProperty Name="Usuarios" Relationship="VozDelEsteModel.FK_Usuarios_Roles" FromRole="Roles" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="RolesPermisos">
+    <Key>
+      <PropertyRef Name="rolPermisoId" />
+    </Key>
+    <Property Name="RolId" Type="Int32" Nullable="false" />
+    <Property Name="PermisoId" Type="Int32" Nullable="false" />
+    <Property Name="rolPermisoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Roles" Relationship="VozDelEsteModel.FK__RolesPerm__rolPe__6383C8BA" FromRole="RolesPermisos" ToRole="Roles" />
+    <NavigationProperty Name="Permisos" Relationship="VozDelEsteModel.FK__RolesPerm__Permi__693CA210" FromRole="RolesPermisos" ToRole="Permisos" />
+  </EntityType>
+  <Association Name="FK__RolesPerm__rolPe__6383C8BA">
+    <End Type="VozDelEsteModel.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="VozDelEsteModel.RolesPermisos" Role="RolesPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="RolesPermisos">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Type="VozDelEsteModel.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="VozDelEsteModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="RolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RolesPerm__Permi__693CA210">
+    <End Type="VozDelEsteModel.Permisos" Role="Permisos" Multiplicity="1" />
+    <End Type="VozDelEsteModel.RolesPermisos" Role="RolesPermisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permisos">
+        <PropertyRef Name="PermisoId" />
+      </Principal>
+      <Dependent Role="RolesPermisos">
+        <PropertyRef Name="PermisoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

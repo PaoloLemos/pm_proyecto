@@ -12,21 +12,18 @@ namespace proyect.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Clientes
+    public partial class Permisos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Clientes()
+        public Permisos()
         {
-            this.Comentarios = new HashSet<Comentarios>();
+            this.RolesPermisos = new HashSet<RolesPermisos>();
         }
     
-        public string CI { get; set; }
+        public int PermisoId { get; set; }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Email { get; set; }
-        public System.DateTime FechaNacimiento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comentarios> Comentarios { get; set; }
+        public virtual ICollection<RolesPermisos> RolesPermisos { get; set; }
     }
 }

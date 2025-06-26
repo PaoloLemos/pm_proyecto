@@ -1,7 +1,9 @@
 ﻿@model proyect.Models.Usuarios
+@using proyect.Security
 
 @{
     ViewBag.Title = "Delete";
+    var customUser = User as CustomPrincipal;
 }
 
 <h2>Delete</h2>
@@ -11,46 +13,33 @@
     <h4>Usuarios</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+        <dt>@Html.DisplayNameFor(m => m.Nombre)</dt>
+        <dd>@Html.DisplayFor(m => m.Nombre)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+        <dt>@Html.DisplayNameFor(m => m.Email)</dt>
+        <dd>@Html.DisplayFor(m => m.Email)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+        <dt>@Html.DisplayNameFor(m => m.Contrasena)</dt>
+        <dd>@Html.DisplayFor(m => m.Contrasena)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Contrasena)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Contrasena)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rol)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rol)
-        </dd>
-
+        <dt>Rol</dt>
+        <dd>@Html.DisplayFor(m => m.Roles.Nombre)</dd>
     </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+   
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        }
+    
+   
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
         </div>
     }
 </div>

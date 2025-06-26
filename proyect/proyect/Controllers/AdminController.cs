@@ -1,4 +1,4 @@
-﻿using proyect.Filters;
+﻿using proyect.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace proyect.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        [RolAuthorize("administrador")]
+        [Permiso(NombrePermiso = "Modificar Usuarios")]
         public ActionResult MenuAdmin()
         {
             return View();
