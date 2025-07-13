@@ -46,8 +46,19 @@ namespace proyect.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CI,Nombre,Apellido,Email,FechaNacimiento")] Clientes clientes)
+        public ActionResult Create([Bind(Include = "CI,Nombre,Apellido,Email,FechaNacimiento,fotoPerfil")] Clientes clientes)
         {
+            if (!ValidarCedulaUruguaya(clientes.CI))
+            {
+                ModelState.AddModelError("CI", "La cédula no es válida.");
+            }
+
+            if (db.Clientes.Any(c => c.CI == clientes.CI))
+            {
+                ModelState.AddModelError("CI", "Ya existe un cliente con esta cédula.");
+            }
+
+
             if (ModelState.IsValid)
             {
                 db.Clientes.Add(clientes);
@@ -123,5 +134,35 @@ namespace proyect.Controllers
             }
             base.Dispose(disposing);
         }
+        public static bool ValidarCedulaUruguaya(string cedula)
+        {
+            // Validar que solo contenga dígitos
+            if (!cedula.All(char.IsDigit))
+                return false;
+
+            // Debe tener 7 u 8 dígitos
+            if (cedula.Length < 7 || cedula.Length > 8)
+                return false;
+
+            // Si tiene 7 dígitos, agregamos un 0 al principio
+            if (cedula.Length == 7)
+                cedula = "0" + cedula;
+
+            int[] pesos = { 2, 9, 8, 7, 6, 3, 4 };
+            int suma = 0;
+
+            for (int i = 0; i < 7; i++)
+            {
+                int digito = int.Parse(cedula[i].ToString());
+                suma += digito * pesos[i];
+            }
+
+            int resto = suma % 10;
+            int digitoEsperado = (resto == 0) ? 0 : (10 - resto);
+            int digitoVerificador = int.Parse(cedula[7].ToString());
+
+            return digitoVerificador == digitoEsperado;
+        }
+
     }
 }

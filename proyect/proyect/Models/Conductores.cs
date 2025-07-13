@@ -15,9 +15,10 @@ namespace proyect.Models
     public partial class Conductores
     {
         public int Id { get; set; }
-        public int ProgramaId { get; set; }
+        public Nullable<int> ProgramaId { get; set; }
         public string Nombre { get; set; }
         public string Bio { get; set; }
+        public string foto { get; set; }
     
         public virtual Programas Programas { get; set; }
     }

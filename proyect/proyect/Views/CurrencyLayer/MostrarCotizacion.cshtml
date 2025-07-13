@@ -1,0 +1,162 @@
+﻿
+@model proyect.Models.CotizacionViewModel
+
+@{
+    ViewBag.Title = "Cotización USD → EUR";
+}
+<style>
+    .cotizacion-container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cotizacion-actual {
+        margin-bottom: 30px;
+    }
+
+        .cotizacion-actual p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+    #cotizacionChart {
+        max-width: 100%;
+    }
+
+    h2, h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .cotizacion-actual-box {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+
+        .cotizacion-actual-box .dato {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.05em;
+            color: #333;
+        }
+
+        .cotizacion-actual-box .titulo {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .cotizacion-actual-box .valor {
+            font-weight: 500;
+            color: #222;
+        }
+
+            .cotizacion-actual-box .valor.tasa {
+                font-size: 1.3em;
+                font-weight: bold;
+                color: #c0392b;
+            }
+</style>
+
+<div class="cotizacion-container">
+    <h2>@ViewBag.Title</h2>
+
+    <div class="cotizacion-actual">
+        @if (Model.CotizacionActual != null && Model.CotizacionActual.Success)
+        {
+<div class="cotizacion-actual-box">
+    <div class="dato">
+        <span class="titulo">Fuente</span>
+        <span class="valor">@Model.CotizacionActual.Source</span>
+    </div>
+    <div class="dato">
+        <span class="titulo">Fecha</span>
+        <span class="valor">@DateTimeOffset.FromUnixTimeSeconds(Model.CotizacionActual.Timestamp).ToLocalTime().ToString("g")</span>
+    </div>
+    <div class="dato">
+        <span class="titulo">USD → EUR</span>
+        <span class="valor tasa">@Model.CotizacionActual.Quotes.UsdEur</span>
+    </div>
+</div>
+        }
+        else
+        {
+            <p class="text-danger">No se pudieron obtener las cotizaciones.</p>
+        }
+    </div>
+
+    <hr />
+
+    <h3>Histórico de cotizaciones</h3>
+    <canvas id="cotizacionChart" height="400"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = @Html.Raw(Json.Encode(Model.Historial.Select(c => c.Fecha.ToString("yyyy-MM-dd HH:mm"))));
+    const data = @Html.Raw(Json.Encode(Model.Historial.Select(c => c.Valor)));
+
+    const ctx = document.getElementById('cotizacionChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'EUR',
+                data: data,
+                borderColor: 'red',
+                backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 4,
+                pointHoverRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Fecha',
+                        color: '#555'
+                    },
+                    ticks: {
+                        color: '#555'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Valor',
+                        color: '#555'
+                    },
+                    ticks: {
+                        color: '#555'
+                    }
+                }
+            }
+        }
+    });
+</script>

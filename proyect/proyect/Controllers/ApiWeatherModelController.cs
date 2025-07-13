@@ -14,6 +14,8 @@ namespace proyect.Controllers
     {
         private readonly string apiKey = "352197478cb79204e7cffd1537f3f77c";
 
+        private VozDelEsteEntities db = new VozDelEsteEntities();
+
         public async Task<ActionResult> Clima(string ciudad = "Maldonado")
         {
             string url = $"https://api.openweathermap.org/data/2.5/weather?q={ciudad}&appid={apiKey}&units=metric&lang=es";
@@ -24,7 +26,25 @@ namespace proyect.Controllers
                 {
                     var response = await client.GetStringAsync(url);
                     var clima = JsonConvert.DeserializeObject<ApiWeatherModel>(response);
-                    ViewBag.CiudadActual = ciudad; // Por si querés mostrar qué ciudad se está viendo
+
+                    // Guardar en base de datos
+                    
+                        var nuevoClima = new Clima
+                        {
+                            Fecha = DateTime.Now.Date,
+                            Temperatura = (decimal)clima.Main.Temp,
+                            Descripcion = clima.Weather[0].Description,
+                        };
+
+
+                    if (ciudad.Trim().ToLower() == "maldonado")
+                    {
+                        db.Clima.Add(nuevoClima);
+                        db.SaveChanges();
+                    }
+                    
+
+                    ViewBag.CiudadActual = ciudad;
                     return View(clima);
                 }
                 catch (HttpRequestException ex)
@@ -35,6 +55,17 @@ namespace proyect.Controllers
             }
         }
 
+        public ActionResult Historial()
+        {
+            var ultimosDias = db.Clima
+    .GroupBy(c => c.Fecha)
+    .OrderByDescending(g => g.Key)
+    .Select(g => g.FirstOrDefault())
+    .Take(7)
+    .ToList();
+
+            return PartialView("_HistorialClima", ultimosDias);
+        }
 
     }
 }

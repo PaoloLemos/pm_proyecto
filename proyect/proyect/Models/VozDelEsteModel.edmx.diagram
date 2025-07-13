@@ -7,28 +7,28 @@
       <Diagram DiagramId="794714f38b49464daafe0f7f1bc78f3a" Name="Diagram1">
         <EntityTypeShape EntityType="VozDelEsteModel.Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Clima" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VozDelEsteModel.ClimaPronostico" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VozDelEsteModel.Comentarios" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Conductores" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Cotizaciones" Width="1.5" PointX="5.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VozDelEsteModel.LogsAcciones" Width="1.5" PointX="8" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Noticias" Width="1.5" PointX="7.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Patrocinadores" Width="1.5" PointX="9.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="VozDelEsteModel.ProgramacionHoraria" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Programas" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="VozDelEsteModel.Usuarios" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
-        <AssociationConnector Association="VozDelEsteModel.FK__Comentari__Clien__49C3F6B7" ManuallyRouted="false" />
-        <AssociationConnector Association="VozDelEsteModel.FK__Comentari__Progr__4AB81AF0" ManuallyRouted="false" />
         <AssociationConnector Association="VozDelEsteModel.FK__Conductor__Progr__4316F928" ManuallyRouted="false" />
-        <AssociationConnector Association="VozDelEsteModel.FK__LogsAccio__Usuar__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="VozDelEsteModel.FK__Programac__Progr__403A8C7D" ManuallyRouted="false" />
         <EntityTypeShape EntityType="VozDelEsteModel.Permisos" Width="1.5" PointX="10.375" PointY="1.5" />
         <EntityTypeShape EntityType="VozDelEsteModel.Roles" Width="1.5" PointX="3.5" PointY="0.75" />
         <EntityTypeShape EntityType="VozDelEsteModel.RolesPermisos" Width="1.5" PointX="5.75" PointY="12" />
         <AssociationConnector Association="VozDelEsteModel.FK__RolesPerm__rolPe__6383C8BA" />
         <AssociationConnector Association="VozDelEsteModel.FK_Usuarios_Roles" />
         <AssociationConnector Association="VozDelEsteModel.FK__RolesPerm__Permi__693CA210" />
+        <EntityTypeShape EntityType="VozDelEsteModel.Comentarios" Width="1.5" PointX="2.75" PointY="2.625" />
+        <EntityTypeShape EntityType="VozDelEsteModel.ProgramacionHoraria" Width="1.5" PointX="2.625" PointY="9.875" />
+        <AssociationConnector Association="VozDelEsteModel.FK__Comentari__Clien__498EEC8D" />
+        <AssociationConnector Association="VozDelEsteModel.FK__Comentari__Progr__4A8310C6" />
+        <AssociationConnector Association="VozDelEsteModel.FK__Programac__Progr__7B264821" />
+		  
       </Diagram>
+		
+		
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

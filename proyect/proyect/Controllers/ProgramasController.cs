@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using proyect.Models;
+using proyect.Security;
 
 namespace proyect.Controllers
 {
@@ -21,6 +23,8 @@ namespace proyect.Controllers
         }
 
         // GET: Programas/Details/5
+
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,61 +39,216 @@ namespace proyect.Controllers
             return View(programas);
         }
 
+
+
+
+
+
+
+       
+
+
+
         // GET: Programas/Create
+
+
+
+        [Permiso(NombrePermiso = "Modificar Programas")]
         public ActionResult Create()
         {
-            return View();
+            var vm = new ProgramaCompletoViewModel
+            {
+                ConductoresDisponibles = db.Conductores
+                    .Where(c => c.ProgramaId == null)
+                    .Select(c => new SelectListItem
+                    {
+                        Value = c.Id.ToString(),
+                        Text = c.Nombre
+                    }).ToList()
+            };
+
+            return View(vm);
         }
+
 
         // POST: Programas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Imagen,Descripcion")] Programas programas)
+        [Permiso(NombrePermiso = "Modificar Programas")]
+
+
+        public ActionResult Create(ProgramaCompletoViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                db.Programas.Add(programas);
+                if (vm.ImagenFile != null && vm.ImagenFile.ContentLength > 0)
+                {
+                    string carpeta = Server.MapPath("~/Content/imagenes/Programas/");
+                    if (!Directory.Exists(carpeta))
+                        Directory.CreateDirectory(carpeta);
+
+                    string nombreArchivo = Path.GetFileName(vm.ImagenFile.FileName);
+                    string rutaCompleta = Path.Combine(carpeta, nombreArchivo);
+                    vm.ImagenFile.SaveAs(rutaCompleta);
+                    vm.Programa.Imagen = "/Content/imagenes/Programas/" + nombreArchivo;
+                }
+
+                db.Programas.Add(vm.Programa);
+                db.SaveChanges();
+
+                // Asignar conductor
+                if (vm.ConductorIdSeleccionado.HasValue)
+                {
+                    var conductor = db.Conductores.Find(vm.ConductorIdSeleccionado.Value);
+                    if (conductor != null)
+                    {
+                        conductor.ProgramaId = vm.Programa.Id;
+                    }
+                }
+
+                // Agregar horario
+                db.ProgramacionHoraria.Add(new ProgramacionHoraria
+                {
+                    ProgramaId = vm.Programa.Id,
+                    DiaSemana = vm.DiaSemana,
+                    HoraInicio = vm.HoraInicio,
+                    HoraFin = vm.HoraFin
+                });
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(programas);
+            // Si hay error, volver a llenar el dropdown
+            vm.ConductoresDisponibles = db.Conductores
+                .Where(c => c.ProgramaId == null)
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Nombre
+                }).ToList();
+
+            return View(vm);
         }
 
         // GET: Programas/Edit/5
+        [Permiso(NombrePermiso = "Modificar Programas")]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Programas programas = db.Programas.Find(id);
-            if (programas == null)
-            {
+
+            var programa = db.Programas.Find(id);
+            if (programa == null)
                 return HttpNotFound();
-            }
-            return View(programas);
+
+            // Obtener conductor asignado
+            var conductor = db.Conductores.FirstOrDefault(c => c.ProgramaId == programa.Id);
+
+            // Obtener horario actual
+            var horario = db.ProgramacionHoraria.FirstOrDefault(h => h.ProgramaId == programa.Id);
+
+            var vm = new ProgramaCompletoViewModel
+            {
+                Programa = programa,
+                ConductorIdSeleccionado = conductor?.Id,
+                DiaSemana = horario?.DiaSemana,
+                HoraInicio = horario?.HoraInicio ?? TimeSpan.Zero,
+                HoraFin = horario?.HoraFin ?? TimeSpan.Zero,
+                ProgramacionHorariaId = horario?.Id,
+                ConductoresDisponibles = db.Conductores
+                    .Where(c => c.ProgramaId == null || c.ProgramaId == programa.Id)
+                    .Select(c => new SelectListItem
+                    {
+                        Value = c.Id.ToString(),
+                        Text = c.Nombre
+                    }).ToList()
+            };
+
+            return View(vm);
         }
+
 
         // POST: Programas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Imagen,Descripcion")] Programas programas)
+        [Permiso(NombrePermiso = "Modificar Programas")]
+
+        
+        public ActionResult Edit(ProgramaCompletoViewModel vm)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(programas).State = EntityState.Modified;
+                var original = db.Programas.Find(vm.Programa.Id);
+                if (original == null)
+                    return HttpNotFound();
+
+                original.Nombre = vm.Programa.Nombre;
+                original.Descripcion = vm.Programa.Descripcion;
+
+                // Imagen nueva opcional
+                if (vm.ImagenFile != null && vm.ImagenFile.ContentLength > 0)
+                {
+                    string carpetaDestino = Server.MapPath("~/Content/imagenes/Programas/");
+                    if (!Directory.Exists(carpetaDestino))
+                        Directory.CreateDirectory(carpetaDestino);
+
+                    string nombreArchivo = Path.GetFileName(vm.ImagenFile.FileName);
+                    string rutaCompleta = Path.Combine(carpetaDestino, nombreArchivo);
+                    vm.ImagenFile.SaveAs(rutaCompleta);
+
+                    original.Imagen = "/Content/imagenes/Programas/" + nombreArchivo;
+                }
+
+                // Cambiar conductor
+                var conductorActual = db.Conductores.FirstOrDefault(c => c.ProgramaId == original.Id);
+                if (conductorActual != null)
+                    conductorActual.ProgramaId = null;
+
+                if (vm.ConductorIdSeleccionado.HasValue)
+                {
+                    var nuevoConductor = db.Conductores.Find(vm.ConductorIdSeleccionado.Value);
+                    if (nuevoConductor != null)
+                        nuevoConductor.ProgramaId = original.Id;
+                }
+
+                // Editar horario existente
+                if (vm.ProgramacionHorariaId.HasValue)
+                {
+                    var horario = db.ProgramacionHoraria.Find(vm.ProgramacionHorariaId.Value);
+                    if (horario != null)
+                    {
+                        horario.DiaSemana = vm.DiaSemana;
+                        horario.HoraInicio = vm.HoraInicio;
+                        horario.HoraFin = vm.HoraFin;
+                    }
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(programas);
+
+            // Si hay error, recargar dropdown
+            vm.ConductoresDisponibles = db.Conductores
+                .Where(c => c.ProgramaId == null || c.ProgramaId == vm.Programa.Id)
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Nombre
+                }).ToList();
+
+            return View(vm);
         }
 
+
         // GET: Programas/Delete/5
+        [Permiso(NombrePermiso = "Modificar Programas")]
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,13 +266,25 @@ namespace proyect.Controllers
         // POST: Programas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Permiso(NombrePermiso = "Modificar Programas")]
+
+        
         public ActionResult DeleteConfirmed(int id)
         {
-            Programas programas = db.Programas.Find(id);
-            db.Programas.Remove(programas);
+            var programa = db.Programas.Find(id);
+
+            // 🧹 Eliminá horarios relacionados
+            var horarios = db.ProgramacionHoraria.Where(h => h.ProgramaId == programa.Id).ToList();
+            foreach (var h in horarios)
+            {
+                db.ProgramacionHoraria.Remove(h);
+            }
+
+            db.Programas.Remove(programa);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

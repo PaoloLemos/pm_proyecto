@@ -18,6 +18,5 @@ namespace proyect.Models
         public System.DateTime Fecha { get; set; }
         public Nullable<decimal> Temperatura { get; set; }
         public string Descripcion { get; set; }
-        public string Icono { get; set; }
     }
 }

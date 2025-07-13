@@ -11,26 +11,32 @@ namespace proyect.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Programas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Programas()
         {
-            this.Comentarios = new HashSet<Comentarios>();
             this.Conductores = new HashSet<Conductores>();
+            this.Comentarios = new HashSet<Comentarios>();
             this.ProgramacionHoraria = new HashSet<ProgramacionHoraria>();
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "El nombre del programa es obligatorio.")]
+        [StringLength(100, ErrorMessage = "El nombre no puede tener más de 100 caracteres.")]
         public string Nombre { get; set; }
+
+        [StringLength(255, ErrorMessage = "La URL de la imagen no puede tener más de 255 caracteres.")]
         public string Imagen { get; set; }
+
         public string Descripcion { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comentarios> Comentarios { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Conductores> Conductores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comentarios> Comentarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProgramacionHoraria> ProgramacionHoraria { get; set; }
     }

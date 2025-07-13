@@ -1,51 +1,160 @@
-﻿@model IEnumerable<proyect.Models.Noticias>
+﻿@using proyect.Security
+@{
+    // Casteamos el User (IPrincipal) a nuestro CustomPrincipal
+    var customUser = User as CustomPrincipal;
+    bool isAuth = Request.IsAuthenticated;
+}
+
+
+@model IEnumerable<proyect.Models.Noticias>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Noticias";
 }
 
-<h2>Index</h2>
+<h2>Noticias</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contenido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaPublicacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Titulo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contenido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaPublicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@if (customUser?.HasPermission("Modificar Noticias") == true)
+{
+    <p>
+        @Html.ActionLink("Crear nueva noticia", "Create", null, new { @class = "btn btn-primary" })
+    </p>
 }
 
-</table>
+<div class="noticias-container">
+    @foreach (var item in Model.OrderByDescending(n => n.Id))
+    {
+        <div class="noticia-card">
+            @if (!string.IsNullOrWhiteSpace(item.Imagen))
+            {
+                <img src="@item.Imagen" alt="Imagen de @item.Titulo" class="noticia-img" />
+            }
+
+            <h3>@item.Titulo</h3>
+            <p class="fecha">@item.FechaPublicacion.ToString("dd/MM/yyyy")</p>
+            <div class="contenido recortado">
+                @item.Contenido
+            </div>
+            <div class="noticia-actions mt-2">
+                @if (customUser?.HasPermission("Modificar Noticias") == true)
+                {
+                    <a href="@Url.Action("Edit", "Noticias", new { id = item.Id })" class="btn-programa editar">Editar</a>
+                }
+
+                <a href="@Url.Action("Details", "Noticias", new { id = item.Id })" class="btn-programa">Detalles</a>
+
+                @if (customUser?.HasPermission("Modificar Noticias") == true)
+                {
+                    <a href="@Url.Action("Delete", "Noticias", new { id = item.Id })" class="btn-programa eliminar">Eliminar</a>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+<style>
+    .noticias-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+
+    }
+
+    .noticia-card {
+        flex: 1 1 calc(33.333% - 20px); /* 3 por fila con espacio */
+        max-width: calc(33.333% - 20px);
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        background: #fafafa;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .noticia-img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+
+    .noticia-actions {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        gap: 8px;
+    }
+
+    .btn-programa {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        border: 1px solid transparent;
+    }
+
+        .btn-programa.editar {
+            background-color: #e0f3ff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+            .btn-programa.editar:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .btn-programa.eliminar {
+            background-color: #ffe0e0;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+
+            .btn-programa.eliminar:hover {
+                background-color: #dc3545;
+                color: white;
+            }
+
+
+
+    .fecha {
+        font-size: 0.9em;
+        color: #888;
+    }
+
+    .contenido {
+        margin-top: 10px;
+    }
+
+    .contenido.recortado {
+        max-height: 150px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .contenido.recortado::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3em;
+        background: linear-gradient(to bottom, rgba(250,250,250,0) 0%, rgba(250,250,250,1) 100%);
+    }
+
+    /* MEDIA QUERY para celulares */
+    @@media (max-width: 768px) {
+        .noticia-card {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+    }
+</style>
+

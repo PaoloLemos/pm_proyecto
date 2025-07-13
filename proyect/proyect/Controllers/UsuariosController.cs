@@ -55,15 +55,24 @@ namespace proyect.Controllers
 
         public ActionResult Create([Bind(Include = "Id,Nombre,Email,Contrasena,RolID")] Usuarios usuarios)
         {
+            // Validación de email duplicado
+            if (db.Usuarios.Any(u => u.Email == usuarios.Email))
+            {
+                ModelState.AddModelError("Email", "Este email ya está registrado.");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Usuarios.Add(usuarios);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            // Siempre cargamos los roles si hay error
             ViewBag.Roles = db.Roles.ToList();
             return View(usuarios);
         }
+
 
         // GET: Usuarios/Edit/5
         [Permiso(NombrePermiso = "Modificar Clientes")]
@@ -97,6 +106,12 @@ namespace proyect.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nombre,Email,Contrasena,RolId")] Usuarios usuarios)
         {
+            // Validación de email duplicado
+            if (db.Usuarios.Any(u => u.Email == usuarios.Email))
+            {
+                ModelState.AddModelError("Email", "Este email ya está registrado.");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(usuarios).State = EntityState.Modified;

@@ -18,5 +18,6 @@ namespace proyect.Models
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int Plan { get; set; }
+        public string Imagen { get; set; }
     }
 }

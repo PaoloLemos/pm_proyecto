@@ -164,6 +164,8 @@
     <Compile Include="Controllers\ApiWeatherModelController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ComentariosController.cs" />
+    <Compile Include="Controllers\ConductoresController.cs" />
+    <Compile Include="Controllers\CurrencyLayerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />
@@ -180,9 +182,6 @@
     <Compile Include="Models\Clima.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ClimaPronostico.cs">
-      <DependentUpon>VozDelEsteModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Comentarios.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
@@ -192,12 +191,12 @@
     <Compile Include="Models\Cotizaciones.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LogsAcciones.cs">
-      <DependentUpon>VozDelEsteModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\CotizacionViewModel.cs" />
+    <Compile Include="Models\currencyLayerResponse.cs" />
     <Compile Include="Models\Noticias.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\NoticiasPartial.cs" />
     <Compile Include="Models\Patrocinadores.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
@@ -207,9 +206,11 @@
     <Compile Include="Models\ProgramacionHoraria.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProgramaCompletoViewModel.cs" />
     <Compile Include="Models\Programas.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProgramasPartial.cs" />
     <Compile Include="Models\Roles.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
@@ -289,6 +290,14 @@
     <Content Include="imagenes\clima\lluvia.jpg" />
     <Content Include="imagenes\logo.png" />
     <Content Include="imagenes\logo1.png" />
+    <Content Include="imagenes\Noticias\dembo.jpg" />
+    <Content Include="imagenes\Noticias\estudiantes.jpg" />
+    <Content Include="imagenes\Noticias\perro.jpg" />
+    <Content Include="imagenes\Noticias\sequia.jpg" />
+    <Content Include="imagenes\Programas\412.jpg" />
+    <Content Include="imagenes\Programas\music-jpg.jpg" />
+    <Content Include="imagenes\Programas\petinati.jpg" />
+    <Content Include="imagenes\Programas\podcastmujeres.jpg" />
     <Content Include="Models\VozDelEsteModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>VozDelEsteModel.edmx</DependentUpon>
@@ -373,9 +382,20 @@
     <Content Include="Views\Comentarios\Details.cshtml" />
     <Content Include="Views\Comentarios\Edit.cshtml" />
     <Content Include="Views\Comentarios\Index.cshtml" />
+    <Content Include="Views\Programas\CreateConTodo.cshtml" />
+    <Content Include="Views\CurrencyLayer\MostrarCotizacion.cshtml" />
+    <Content Include="Views\ApiWeatherModel\_HistorialClima.cshtml" />
+    <Content Include="Views\Conductores\Create.cshtml" />
+    <Content Include="Views\Conductores\Delete.cshtml" />
+    <Content Include="Views\Conductores\Details.cshtml" />
+    <Content Include="Views\Conductores\Edit.cshtml" />
+    <Content Include="Views\Conductores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="imagenes\Clientes\" />
+    <Folder Include="imagenes\Conductores\" />
+    <Folder Include="imagenes\Patrocinadores\" />
     <Folder Include="Views\MenuAdmin\" />
   </ItemGroup>
   <ItemGroup>

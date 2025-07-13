@@ -1,61 +1,118 @@
 ﻿@model proyect.Models.Noticias
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Noticia";
 }
 
-<h2>Edit</h2>
+<style>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Noticias</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
 
+    .edit-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+    }
+
+    .edit-form {
+        width: 100%;
+        max-width: 700px;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+        .edit-form h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        /* Aquí centramos perfectamente los labels y campos */
+        .edit-form .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    .form-control {
+        width: 100%; /* campo ocupa todo el ancho disponible */
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+        font-size: 16px;
+        max-width: 100%; /* asegura que el campo no se desborde */
+    }
+
+    .control-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #495057;
+        width: 100%; /* label centrado completamente */
+    }
+
+    input[type="submit"] {
+        background-color: #17a2b8;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #138496;
+        }
+
+    .back-link {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .text-danger {
+        font-size: 0.9em;
+    }
+
+</style>
+
+<div class="edit-container">
+    <div class="edit-form">
+        <h2> Editar Noticia</h2>
+
+        @using (Html.BeginForm("Edit", "Noticias", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.FechaPublicacion)
         <div class="form-group">
-            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
-            </div>
+            @Html.LabelFor(m => m.Titulo, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(m => m.Titulo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Titulo, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Contenido, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Contenido, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Contenido, "", new { @class = "text-danger" })
-            </div>
+            @Html.LabelFor(m => m.Contenido, htmlAttributes: new { @class = "control-label" })
+            @Html.TextAreaFor(m => m.Contenido, new { @class = "form-control", rows = 8 })
+            @Html.ValidationMessageFor(m => m.Contenido, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FechaPublicacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaPublicacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FechaPublicacion, "", new { @class = "text-danger" })
-            </div>
+            @Html.Label("Cambiar imagen (opcional)", htmlAttributes: new { @class = "control-label" })
+            <input type="file" name="ImagenFile" class="form-control" />
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <input type="submit" value=" Guardar Cambios" />
             </div>
-        </div>
+        }
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div class="back-link">
+            @Html.ActionLink("← Volver a noticias", "Index")
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>

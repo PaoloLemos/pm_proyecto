@@ -118,76 +118,84 @@
             imagenMapa = Url.Content("~/imagenes/departamentos/artigas.png");
         }
 
-<div class="clima-grid">
-    <!-- Columna izquierda: Mapa -->
-    <div class="clima-imagen-container">
-        <img src="@imagenMapa" alt="Mapa de Uruguay con departamento resaltado" class="mapa-uruguay" />
-    </div>
-
-    <!-- Columna derecha: Info del clima -->
-   <div class="clima-info">
-    <h2>Clima actual en @Model.Name (@Model.Sys.Country)</h2>
 
 
 
-    <div class="clima-detalle-grid">
-        <!-- Columna izquierda: solo imagen del clima -->
-        <div class="clima-detalle-imagen">
 
-            <img src="@imagen" alt="Clima del día" class="icono-clima-grande" />
-            <form method="get" asp-action="Clima">
-                <select name="ciudad">
-                    <option value="Maldonado" @(ViewBag.CiudadActual == "Maldonado" ? "selected" : "")>Maldonado</option>
-                    <option value="Paysandú" @(ViewBag.CiudadActual == "Paysandú" ? "selected" : "")>Paysandú</option>
-                    <option value="Soriano" @(ViewBag.CiudadActual == "Soriano" ? "selected" : "")>Soriano</option>
-                    <option value="Colonia,UY" @(ViewBag.CiudadActual == "Colonia" ? "selected" : "")>Colonia</option>
-                    <option value="Flores" @(ViewBag.CiudadActual == "Flores" ? "selected" : "")>Flores</option>
-                    <option value="Florida,UY" @(ViewBag.CiudadActual == "Florida" ? "selected" : "")>Florida</option>
-                    <option value="San José,UY" @(ViewBag.CiudadActual == "San José" ? "selected" : "")>San José</option>
-                    <option value="Treinta y Tres" @(ViewBag.CiudadActual == "Treinta y Tres" ? "selected" : "")>Treinta y Tres</option>
-                    <option value="Durazno" @(ViewBag.CiudadActual == "Durazno" ? "selected" : "")>Durazno</option>
-                    <option value="Rocha" @(ViewBag.CiudadActual == "Rocha" ? "selected" : "")>Rocha</option>
-                    <option value="Tacuarembo" @(ViewBag.CiudadActual == "Tacuarembo" ? "selected" : "")>Tacuarembó</option>
-                    <option value="Lavalleja" @(ViewBag.CiudadActual == "Lavalleja" ? "selected" : "")>Lavalleja</option>
-                    <option value="Rio Negro" @(ViewBag.CiudadActual == "Rio Negro" ? "selected" : "")>Río Negro</option>
-                    <option value="Canelones" @(ViewBag.CiudadActual == "Canelones" ? "selected" : "")>Canelones</option>
-                    <option value="Cerro Largo,UY" @(ViewBag.CiudadActual == "Cerro Largo" ? "selected" : "")>Cerro Largo</option>
-                    <option value="Montevideo" @(ViewBag.CiudadActual == "Montevideo" ? "selected" : "")>Montevideo</option>
-                    <option value="Salto" @(ViewBag.CiudadActual == "Salto" ? "selected" : "")>Salto</option>
-                    <option value="Rivera" @(ViewBag.CiudadActual == "Rivera" ? "selected" : "")>Rivera</option>
-                    <option value="Artigas" @(ViewBag.CiudadActual == "Artigas" ? "selected" : "")>Artigas</option>
-                </select>
-                <button type="submit">Buscar clima</button>
-            </form>
+
+
+
+
+        <div class="clima-grid">
+            <!-- Columna izquierda: Mapa -->
+            <div class="clima-imagen-container">
+                <img src="@imagenMapa" alt="Mapa de Uruguay con departamento resaltado" class="mapa-uruguay" />
+            </div>
+
+            <!-- Columna derecha: Info del clima -->
+            <div class="clima-info">
+                <h2>Clima actual en @Model.Name (@Model.Sys.Country)</h2>
+
+
+
+                <div class="clima-detalle-grid">
+                    <!-- Columna izquierda: solo imagen del clima -->
+                    <div class="clima-detalle-imagen">
+
+                        <img src="@imagen" alt="Clima del día" class="icono-clima-grande" />
+                        <form method="get" asp-action="Clima">
+                            <select name="ciudad">
+                                <option value="Maldonado" @(ViewBag.CiudadActual == "Maldonado" ? "selected" : "")>Maldonado</option>
+                                <option value="Paysandú" @(ViewBag.CiudadActual == "Paysandú" ? "selected" : "")>Paysandú</option>
+                                <option value="Soriano" @(ViewBag.CiudadActual == "Soriano" ? "selected" : "")>Soriano</option>
+                                <option value="Colonia,UY" @(ViewBag.CiudadActual == "Colonia" ? "selected" : "")>Colonia</option>
+                                <option value="Flores" @(ViewBag.CiudadActual == "Flores" ? "selected" : "")>Flores</option>
+                                <option value="Florida,UY" @(ViewBag.CiudadActual == "Florida" ? "selected" : "")>Florida</option>
+                                <option value="San José,UY" @(ViewBag.CiudadActual == "San José" ? "selected" : "")>San José</option>
+                                <option value="Treinta y Tres" @(ViewBag.CiudadActual == "Treinta y Tres" ? "selected" : "")>Treinta y Tres</option>
+                                <option value="Durazno" @(ViewBag.CiudadActual == "Durazno" ? "selected" : "")>Durazno</option>
+                                <option value="Rocha" @(ViewBag.CiudadActual == "Rocha" ? "selected" : "")>Rocha</option>
+                                <option value="Tacuarembo" @(ViewBag.CiudadActual == "Tacuarembo" ? "selected" : "")>Tacuarembó</option>
+                                <option value="Lavalleja" @(ViewBag.CiudadActual == "Lavalleja" ? "selected" : "")>Lavalleja</option>
+                                <option value="Rio Negro" @(ViewBag.CiudadActual == "Rio Negro" ? "selected" : "")>Río Negro</option>
+                                <option value="Canelones" @(ViewBag.CiudadActual == "Canelones" ? "selected" : "")>Canelones</option>
+                                <option value="Cerro Largo,UY" @(ViewBag.CiudadActual == "Cerro Largo" ? "selected" : "")>Cerro Largo</option>
+                                <option value="Montevideo" @(ViewBag.CiudadActual == "Montevideo" ? "selected" : "")>Montevideo</option>
+                                <option value="Salto" @(ViewBag.CiudadActual == "Salto" ? "selected" : "")>Salto</option>
+                                <option value="Rivera" @(ViewBag.CiudadActual == "Rivera" ? "selected" : "")>Rivera</option>
+                                <option value="Artigas" @(ViewBag.CiudadActual == "Artigas" ? "selected" : "")>Artigas</option>
+                            </select>
+                            <button type="submit">Buscar clima</button>
+                        </form>
+                    </div>
+
+                    <!-- Columna derecha: datos -->
+                    <div class="clima-detalle-datos">
+                        <div class="dato-clima">
+                            <img src="~/imagenes/clima/termometro.png" alt="Temperatura" class="icono-clima" />
+                            <span><strong>Temperatura:</strong> @Model.Main.Temp °C</span>
+                        </div>
+
+                        <div class="dato-clima">
+                            <img src="~/imagenes/clima/sensacion.jpg" alt="Sensación térmica" class="icono-clima" />
+                            <span><strong>Sensación térmica:</strong> @Model.Main.FeelsLike °C</span>
+                        </div>
+
+                        <div class="dato-clima">
+                            <img src="~/imagenes/clima/flechaDiagonal.jpg" alt="Viento" class="icono-clima" />
+                            <span><strong>Viento:</strong> @Model.Wind.Speed m/s</span>
+                        </div>
+
+                        <div class="dato-clima">
+                            <img src="~/imagenes/clima/humedad.png" alt="Humedad" class="icono-clima" />
+                            <span><strong>Humedad:</strong> @Model.Main.Humidity %</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-
-        <!-- Columna derecha: datos -->
-        <div class="clima-detalle-datos">
-            <div class="dato-clima">
-                <img src="~/imagenes/clima/termometro.png" alt="Temperatura" class="icono-clima" />
-                <span><strong>Temperatura:</strong> @Model.Main.Temp °C</span>
-            </div>
-
-            <div class="dato-clima">
-                <img src="~/imagenes/clima/sensacion.jpg" alt="Sensación térmica" class="icono-clima" />
-                <span><strong>Sensación térmica:</strong> @Model.Main.FeelsLike °C</span>
-            </div>
-
-            <div class="dato-clima">
-                <img src="~/imagenes/clima/flechaDiagonal.jpg" alt="Viento" class="icono-clima" />
-                <span><strong>Viento:</strong> @Model.Wind.Speed m/s</span>
-            </div>
-
-            <div class="dato-clima">
-                <img src="~/imagenes/clima/humedad.png" alt="Humedad" class="icono-clima" />
-                <span><strong>Humedad:</strong> @Model.Main.Humidity %</span>
-            </div>
-        </div>
-    </div>
-   
-
-</div>
-</div>
     }
     else
     {
@@ -195,11 +203,11 @@
     }
 
 
+    @Html.Action("Historial", "ApiWeatherModel")
 
-    <h2>asdfsadsadasdasdsadasdasdasdasd</h2>
 
 </main>
-    
 
-    
- 
+
+
+

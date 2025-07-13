@@ -1,45 +1,258 @@
-﻿@model IEnumerable<proyect.Models.Programas>
+﻿@using proyect.Security
+
+@model IEnumerable<proyect.Models.Programas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Programas";
+
+    // Suponiendo que el permiso se basa en rol (ajustalo según tu lógica)
+    var customUser = User as CustomPrincipal;
+
+    var programacionHoy = ViewBag.ProgramacionHoy as List<proyect.Models.ProgramacionHoraria>;
 }
 
-<h2>Index</h2>
+<style>
+    .programas-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th></th>
-    </tr>
+    .programa-card {
+        width: 300px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+
+        .programa-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    .programa-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 300px;
+    }
+
+    .programa-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 1px solid #eee;
+    }
+
+    .programa-content {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .programa-nombre {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .programa-descripcion {
+        font-size: 0.95em;
+        color: #555;
+        margin-bottom: 10px;
+        max-height: 80px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .programa-horario {
+        font-size: 0.9em;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    .programa-actions mt-2
+    {
+        margin-block :10px;
+    }
+    .programa-actions {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9em;
+    }
+
+        .programa-actions a {
+            color: #007bff;
+            text-decoration: none;
+            padding-inline: 35px;
+        }
+
+            .programa-actions a:hover {
+                text-decoration: underline;
+            }
+
+    .grilla-hoy {
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .grilla-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+
+        .grilla-item:last-child {
+            border-bottom: none;
+        }
+
+    .grilla-hora {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .grilla-nombre {
+        margin-left: 10px;
+        color: #444;
+    }
+    .btn-programa {
+        display: inline-block;
+        padding: 6px 14px;
+        margin-right: 8px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+        .btn-programa.editar {
+            background-color: #e0f3ff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+            .btn-programa.editar:hover {
+                background-color: #007bff;
+                color: white;
+            }
+
+        .btn-programa.eliminar {
+            background-color: #ffe0e0;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+
+            .btn-programa.eliminar:hover {
+                background-color: #dc3545;
+                color: white;
+            }
+</style>
+
+<h2 class="text-center">Programas</h2>
+
+@if (customUser?.HasPermission("Modificar Programas") == true)
+{
+    <div class="text-center" style="margin-bottom: 20px;">
+        @Html.ActionLink("Crear nuevo programa", "Create", null, new { @class = "btn btn-success" })
+    </div>
 }
 
-</table>
+
+<div class="programas-container">
+    @foreach (var programa in Model)
+    {
+        var horario = programa.ProgramacionHoraria.FirstOrDefault();
+        <div class="programa-card">
+            @if (!string.IsNullOrEmpty(programa.Imagen))
+            {
+                <img src="@programa.Imagen" class="programa-img" alt="Imagen de @programa.Nombre" />
+            }
+            else
+            {
+                <div style="height:180px; background:#eee; display:flex; align-items:center; justify-content:center; color:#888;">
+                    Sin imagen
+                </div>
+            }
+
+        <div class="programa-content">
+            <div class="programa-nombre">@programa.Nombre</div>
+            <div class="programa-descripcion">@programa.Descripcion</div>
+            <div class="programa-horario">
+                @if (horario != null)
+                {
+                    <text>@horario.DiaSemana, @horario.HoraInicio.ToString(@"hh\:mm") - @horario.HoraFin.ToString(@"hh\:mm")</text>
+                }
+                else
+                {
+                    <text>Sin horario asignado</text>
+                }
+            </div>
+
+            @if (customUser?.HasPermission("Modificar Programas") == true)
+            {<div class="programa-actions mt-2">
+                    <a href="@Url.Action("Edit", "Programas", new { id = programa.Id })" class="btn-programa editar">Editar</a>
+                    <a href="@Url.Action("Delete", "Programas", new { id = programa.Id })" class="btn-programa eliminar">Eliminar</a>
+                </div>
+
+            }
+
+            <div class="text-end mt-2">
+                <a href="@Url.Action("Details", "Programas", new { id = programa.Id })" class="btn btn-outline-primary btn-sm">Ver más</a>
+            </div>
+        </div>
+        </div>
+
+    }
+</div>
+
+<hr />
+
+<h2 class="text-center" style="margin-top:50px;">Programación de hoy</h2>
+
+<div class="grilla-hoy">
+    @{
+        TimeSpan horaActual = ViewBag.HoraActual ?? TimeSpan.Zero;
+    }
+
+    @if (programacionHoy != null && programacionHoy.Any())
+    {
+        foreach (var item in programacionHoy)
+        {
+            bool enEmision = item.HoraInicio <= horaActual && horaActual <= item.HoraFin;
+            var conductor = item.Programas.Conductores.FirstOrDefault();
+
+            <div class="grilla-item @(enEmision ? "en-emision" : "")">
+                <div>
+                    <span class="grilla-hora">@item.HoraInicio.ToString(@"hh\:mm") - @item.HoraFin.ToString(@"hh\:mm")</span>
+                    <span class="grilla-nombre">@item.Programas.Nombre</span>
+                    @if (conductor != null)
+                    {
+                        <span class="grilla-conductor">con @conductor.Nombre</span>
+                    }
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-center text-muted">No hay programación para hoy.</p>
+    }
+</div>

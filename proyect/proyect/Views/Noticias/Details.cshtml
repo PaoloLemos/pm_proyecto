@@ -1,50 +1,61 @@
 ﻿@model proyect.Models.Noticias
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Titulo;
 }
 
-<h2>Details</h2>
+<div class="detalle-noticia">
+    <h1>@Model.Titulo</h1>
 
-<div>
-    <h4>Noticias</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
+    <p class="fecha">@Model.FechaPublicacion.ToString("dd/MM/yyyy")</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
+    @if (!string.IsNullOrWhiteSpace(Model.Imagen))
+    {
+        <img src="@Model.Imagen" alt="Imagen de @Model.Titulo" class="imagen-noticia" />
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contenido)
-        </dt>
+    <div class="contenido-noticia">
+        <p>@Model.Contenido</p>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contenido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaPublicacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaPublicacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-    </dl>
+    <p>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">← Volver a noticias</a>
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+<style>
+    .detalle-noticia {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+        .detalle-noticia h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+    .fecha {
+        color: #777;
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    .imagen-noticia {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .contenido-noticia {
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
+
+</style>

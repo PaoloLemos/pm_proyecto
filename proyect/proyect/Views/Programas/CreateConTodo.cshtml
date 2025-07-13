@@ -1,0 +1,106 @@
+﻿@model proyect.Models.ProgramaCompletoViewModel
+
+@{
+    ViewBag.Title = "Crear programa con conductor y horario";
+}
+
+<style>
+    .form-container {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+    .btn-volver {
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+</style>
+
+<div class="form-container">
+    <h2 class="text-center">📻 Crear Programa</h2>
+
+    @using (Html.BeginForm("CreateConTodo", "Programas", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Programa.Nombre)
+            @Html.TextBoxFor(m => m.Programa.Nombre, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Programa.Descripcion)
+            @Html.TextAreaFor(m => m.Programa.Descripcion, new { @class = "form-control", rows = 4 })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Imagen del programa")
+            <input type="file" name="ImagenFile" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Asignar conductor existente")
+            @Html.DropDownListFor(m => m.ConductorIdSeleccionado, new SelectList(Model.ConductoresDisponibles, "Value", "Text"), "-- Seleccionar conductor --", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Día de la semana")
+            @Html.TextBoxFor(m => m.DiaSemana, new { @class = "form-control", placeholder = "Ej: Lunes, Martes..." })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Hora de inicio")
+            @Html.TextBoxFor(m => m.HoraInicio, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Hora de fin")
+            @Html.TextBoxFor(m => m.HoraFin, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="✅ Crear programa completo" />
+        </div>
+    }
+
+    <div class="btn-volver">
+        @Html.ActionLink("← Volver al listado", "Index", "Programas")
+    </div>
+</div>

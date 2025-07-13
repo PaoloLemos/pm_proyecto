@@ -11,21 +11,36 @@ namespace proyect.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Clientes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Clientes()
-        {
-            this.Comentarios = new HashSet<Comentarios>();
-        }
-    
+        [StringLength(20)]
+
         public string CI { get; set; }
+
+        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [StringLength(100)]
         public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "El apellido es obligatorio.")]
+        [StringLength(100)]
         public string Apellido { get; set; }
+
+        [Required(ErrorMessage = "El email es obligatorio.")]
+        [EmailAddress(ErrorMessage = "Debe ingresar un email válido.")]
+        [StringLength(100)]
         public string Email { get; set; }
-        public System.DateTime FechaNacimiento { get; set; }
-    
+
+        [Required(ErrorMessage = "La fecha de nacimiento es obligatoria.")]
+        [DataType(DataType.Date)]
+        public DateTime FechaNacimiento { get; set; }
+
+        [Url(ErrorMessage = "Debe ingresar una URL válida.")]
+        [StringLength(250)]
+        public string fotoPerfil { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comentarios> Comentarios { get; set; }
     }

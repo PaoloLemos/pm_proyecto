@@ -11,13 +11,22 @@ namespace proyect.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Noticias
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "El título es obligatorio.")]
+        [StringLength(200, ErrorMessage = "El título no puede tener más de 200 caracteres.")]
         public string Titulo { get; set; }
+
         public string Contenido { get; set; }
-        public System.DateTime FechaPublicacion { get; set; }
+
+        [Required(ErrorMessage = "La fecha de publicación es obligatoria.")]
+        [DataType(DataType.Date)]
+        public DateTime FechaPublicacion { get; set; }
+
+        [StringLength(255, ErrorMessage = "La URL de la imagen no puede tener más de 255 caracteres.")]
         public string Imagen { get; set; }
     }
 }

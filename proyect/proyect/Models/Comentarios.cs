@@ -14,7 +14,7 @@ namespace proyect.Models
     
     public partial class Comentarios
     {
-        public int Id { get; set; }
+        public int ComentarioId { get; set; }
         public string ClienteCI { get; set; }
         public Nullable<int> ProgramaId { get; set; }
         public string Comentario { get; set; }

@@ -2,6 +2,15 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    background: linear-gradient(to bottom, #2b7bb9, #1a2c3a);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body {
+    min-height: 100vh;
+    padding-top: 80px !important;
+    background: transparent !important;
 }
 
 
@@ -9,7 +18,7 @@
 /* 3) Haz que main ocupe como mínimo toda la altura disponible */
 main {
     min-height: 100%;
-    padding-top: 80px;
+  
     /* si prefieres basarlo en viewport:
      min-height: 100vh; */
 }
@@ -119,11 +128,7 @@ main {
     }
 
 .hero-section {
-    background: linear-gradient(to bottom, #2b7bb9, #1a2c3a); /* Azul oscuro tipo Twitter a azul muy oscuro/negro */
-    color: #000; /* Texto oscuro para buen contraste */
-    padding: 50px;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
-
+    min-height: 100vh;
+    padding: 50px 0;
+    background-color: transparent;
 }

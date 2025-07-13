@@ -1,53 +1,163 @@
-﻿@model proyect.Models.Programas
+﻿@model proyect.Models.ProgramaCompletoViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Programa";
 }
 
-<h2>Edit</h2>
+<style>
+    .edit-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Programas</h4>
-        <hr />
+    .form-title {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    .form-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .form-col {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    .text-danger {
+        color: red;
+        font-size: 0.9em;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .back-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="edit-container">
+    @using (Html.BeginForm("Edit", "Programas", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Programa.Id)
+        @Html.HiddenFor(m => m.ProgramacionHorariaId)
+
+        <div class="form-title">Editar Programa</div>
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        <div class="form-columns">
+            <!-- 📄 Columna izquierda -->
+            <div class="form-col">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Programa.Nombre)
+                    @Html.TextBoxFor(m => m.Programa.Nombre, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Programa.Descripcion)
+                    @Html.TextAreaFor(m => m.Programa.Descripcion, new { @class = "form-control", rows = 4 })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Imagen actual")
+                    @if (!string.IsNullOrEmpty(Model.Programa.Imagen))
+                    {
+                        <img src="@Model.Programa.Imagen" alt="Imagen actual" style="max-width: 150px; border-radius: 6px;" />
+                    }
+                    else
+                    {
+                        <p class="text-muted">No hay imagen asociada.</p>
+                    }
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Cambiar imagen")
+                    <input type="file" name="ImagenFile" class="form-control" />
+                </div>
+            </div>
+
+            <!-- ⏰ Columna derecha -->
+            <div class="form-col">
+                <div class="form-group">
+                    @Html.Label("Conductor asignado")
+                    @Html.DropDownListFor(m => m.ConductorIdSeleccionado,
+                        new SelectList(Model.ConductoresDisponibles, "Value", "Text", Model.ConductorIdSeleccionado),
+                        "-- Seleccionar conductor --",
+                        new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Día de la semana")
+                    @Html.DropDownListFor(m => m.DiaSemana,
+                        new SelectList(new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" }, Model.DiaSemana),
+                        "-- Seleccionar día --",
+                        new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Hora de inicio")
+                    @Html.TextBoxFor(m => m.HoraInicio, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Hora de fin")
+                    @Html.TextBoxFor(m => m.HoraFin, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
-            </div>
+        <!-- Botón centrado -->
+        <div class="form-group text-center" style="margin-top: 30px;">
+            <input type="submit" value="Guardar cambios" />
         </div>
+    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+    <div class="back-link">
+        @Html.ActionLink("← Volver al listado", "Index", null, new { @class = "btn btn-link" })
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>

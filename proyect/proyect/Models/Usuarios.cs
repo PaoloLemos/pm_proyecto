@@ -11,23 +11,29 @@ namespace proyect.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Usuarios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuarios()
-        {
-            this.LogsAcciones = new HashSet<LogsAcciones>();
-        }
-    
         public int Id { get; set; }
+        
+        
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [StringLength(100)]
         public string Nombre { get; set; }
-        public string Email { get; set; }
+
+
+            [Required(ErrorMessage = "El email es obligatorio")]
+            [StringLength(100)]
+            [EmailAddress(ErrorMessage = "El formato del email no es válido")]
+            public string Email { get; set; }
+
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
+        [StringLength(255)]
         public string Contrasena { get; set; }
+        [Required(ErrorMessage = "El rol es obligatorio")]
         public int RolID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LogsAcciones> LogsAcciones { get; set; }
         public virtual Roles Roles { get; set; }
     }
 }
