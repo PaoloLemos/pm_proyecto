@@ -1,42 +1,58 @@
 ﻿@model proyect.Models.Programas
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Nombre;
 }
 
-<h2>Details</h2>
+<div class="detalle-programa">
+    <h1>@Model.Nombre</h1>
 
-<div>
-    <h4>Programas</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+    @if (!string.IsNullOrWhiteSpace(Model.Imagen))
+    {
+        <img src="@Model.Imagen" alt="Imagen del programa" class="imagen-programa" />
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+    <div class="contenido-programa">
+        <p>@Model.Descripcion</p>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-
-    </dl>
+    <div class="text-center mt-4">
+        @Html.ActionLink("← Volver al listado", "Index", null, new { @class = "btn btn-outline-primary" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<style>
+    .detalle-programa {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px 30px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+        .detalle-programa h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+    .imagen-programa {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+
+    .contenido-programa {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    .btn {
+        min-width: 180px;
+    }
+</style>

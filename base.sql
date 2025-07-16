@@ -152,6 +152,9 @@ VALUES
 
   --creamos permisos , puede que aun falten
 INSERT INTO Permisos (Nombre) VALUES
+  
+  ('Modificar Conductores'),
+
   ('Modificar Clientes'),
   ('Ver Clientes'),
   ('Modificar Usuarios'),
@@ -232,8 +235,21 @@ INSERT INTO ProgramacionHoraria (ProgramaId, DiaSemana, HoraInicio, HoraFin) VAL
 (6, 'Miércoles', '12:00:00', '16:00:00');
 
 go
+INSERT INTO Patrocinadores (Nombre, Descripcion, Plan, Imagen)
+VALUES
+('Sony', NULL, 2, '/Content/imagenes/Patrocinadores/f3cf6d20-16de-45d4-9317-e470dbd04f21.jpg'),
+('JBL', 'calidad de sonido', 6, '/Content/imagenes/Patrocinadores/281617d0-5e6a-46e8-a610-cdf274918216.jpg'),
+('Ruben Aprahamian', 'el mundo de las mangueras', 23, '/Content/imagenes/Patrocinadores/8941c162-44ca-41cc-a16b-7a7ed8b76421.jpg');
+go
 
+INSERT INTO Conductores (ProgramaId, Nombre, Bio, foto)
+VALUES
+(1, 'Petinatti', 'muy buen conductor', '/Content/imagenes/Conductores/petiperfil.png'),
+(2, 'Davo Xeneize', 'El que mas sabe de futbol', '/Content/imagenes/Conductores/Davo.jpg'),
+(3, 'Gustavo Ripa', 'Guitarrista talentoso', '/Content/imagenes/Conductores/GustavoRipa.jpg'),
+(4, 'Sofía Vercetti', 'La que mas sabe de las polémicas en el este', '/Content/imagenes/Conductores/podcastmujeres.jpg');
 
+go
 --para ver si anduvo lo anterior
 SELECT RP.rolPermisoId, R.Nombre AS Rol, P.Nombre AS Permiso
 FROM RolesPermisos RP
@@ -242,9 +258,5 @@ JOIN Permisos P ON RP.PermisoID = P.PermisoID
 WHERE RP.RolID = 1;
 
 
-select * from Roles
 
-select * from Permisos
-SELECT * FROM ProgramacionHoraria
-select * from Noticias
-select * from Programas
+

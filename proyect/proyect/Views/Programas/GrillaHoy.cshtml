@@ -1,0 +1,37 @@
+﻿@model List<proyect.Models.ProgramacionHoraria>
+
+@{
+    ViewBag.OcultarFooter = true;
+
+    var horaActual = ViewBag.HoraActual ?? TimeSpan.Zero;
+}
+
+<h2 class="text-center mb-4" style="color: white"> 📅 Programación de Hoy</h2>
+
+<div class="grilla-hoy">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            bool enEmision = item.HoraInicio <= horaActual && horaActual <= item.HoraFin;
+            var conductor = item.Programas.Conductores.FirstOrDefault();
+
+            <div class="grilla-item @(enEmision ? "en-emision" : "")">
+                <div>
+                    <span class="grilla-hora">@item.HoraInicio.ToString(@"hh\:mm") - @item.HoraFin.ToString(@"hh\:mm")</span>
+                    <span class="grilla-nombre">@item.Programas.Nombre</span>
+                    @if (conductor != null)
+                    {
+                        <span class="grilla-conductor">con @conductor.Nombre</span>
+                    }
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-center text-muted">No hay programación para hoy.</p>
+    }
+</div>
+
+

@@ -2,44 +2,118 @@
 @using proyect.Security
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Usuario";
     var customUser = User as CustomPrincipal;
 }
 
-<h2>Delete</h2>
+<style>
+    .btn-editar {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        text-align: center;
+        user-select: none;
+        background-color: #e0f3ff;
+        color: #007bff;
+        border: 1px solid #007bff;
+        cursor: pointer;
+    }
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Usuarios</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>@Html.DisplayNameFor(m => m.Nombre)</dt>
-        <dd>@Html.DisplayFor(m => m.Nombre)</dd>
+        .btn-editar:hover {
+            background-color: #007bff;
+            color: white;
+        }
 
-        <dt>@Html.DisplayNameFor(m => m.Email)</dt>
-        <dd>@Html.DisplayFor(m => m.Email)</dd>
+    .btn-eliminar {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        text-align: center;
+        user-select: none;
+        background-color: #ffe0e0;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+        cursor: pointer;
+    }
 
-        <dt>@Html.DisplayNameFor(m => m.Contrasena)</dt>
-        <dd>@Html.DisplayFor(m => m.Contrasena)</dd>
+        .btn-eliminar:hover {
+            background-color: #dc3545;
+            color: white;
+        }
 
-        <dt>Rol</dt>
-        <dd>@Html.DisplayFor(m => m.Roles.Nombre)</dd>
-    </dl>
+    /* Contenedor centrado y cuadro blanco */
+    .container-delete {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
 
-   
+    .box-delete {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    dl {
+        margin-bottom: 30px;
+    }
+
+    dt {
+        font-weight: 600;
+        color: #444;
+    }
+
+    dd {
+        margin-bottom: 15px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .btn {
+        flex-grow: 1;
+    }
+</style>
+
+<div class="container-delete">
+    <div class="box-delete">
+        <h3 class="text-center mb-4">Confirmar eliminación de usuario</h3>
+
+        <dl class="row">
+            <dt class="col-5 text-end">Nombre:</dt>
+            <dd class="col-7">@Html.DisplayFor(m => m.Nombre)</dd>
+
+            <dt class="col-5 text-end">Email:</dt>
+            <dd class="col-7">@Html.DisplayFor(m => m.Email)</dd>
+
+            <dt class="col-5 text-end">Rol:</dt>
+            <dd class="col-7">@Html.DisplayFor(m => m.Roles.Nombre)</dd>
+        </dl>
+
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-danger" />
-                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+            <div class="form-actions">
+                <input type="submit" value="Eliminar" class="btn-eliminar" />
+                @Html.ActionLink("Volver", "Index", null, new { @class = "btn-editar" })
             </div>
         }
-    
-   
-        <div class="form-actions no-color">
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
-        </div>
-    }
+    </div>
 </div>

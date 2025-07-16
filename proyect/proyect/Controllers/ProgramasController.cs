@@ -81,6 +81,11 @@ namespace proyect.Controllers
 
         public ActionResult Create(ProgramaCompletoViewModel vm)
         {
+            if (HayConflictoHorario(vm.DiaSemana, vm.HoraInicio, vm.HoraFin))
+            {
+                ModelState.AddModelError("", "Ya existe un programa en ese horario. Elegí otro rango.");
+            }
+
             if (ModelState.IsValid)
             {
                 if (vm.ImagenFile != null && vm.ImagenFile.ContentLength > 0)
@@ -185,6 +190,12 @@ namespace proyect.Controllers
             if (ModelState.IsValid)
             {
                 var original = db.Programas.Find(vm.Programa.Id);
+
+
+                if (HayConflictoHorario(vm.DiaSemana, vm.HoraInicio, vm.HoraFin))
+                {
+                    ModelState.AddModelError("", "Ya existe un programa en ese horario. Elegí otro rango.");
+                }
                 if (original == null)
                     return HttpNotFound();
 
@@ -277,6 +288,7 @@ namespace proyect.Controllers
             var horarios = db.ProgramacionHoraria.Where(h => h.ProgramaId == programa.Id).ToList();
             foreach (var h in horarios)
             {
+
                 db.ProgramacionHoraria.Remove(h);
             }
 
@@ -294,5 +306,60 @@ namespace proyect.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public ActionResult GrillaHoy()
+        {
+            string nombreDia = "";
+
+            switch (DateTime.Today.DayOfWeek)
+            {
+                case DayOfWeek.Monday: nombreDia = "Lunes"; break;
+                case DayOfWeek.Tuesday: nombreDia = "Martes"; break;
+                case DayOfWeek.Wednesday: nombreDia = "Miércoles"; break;
+                case DayOfWeek.Thursday: nombreDia = "Jueves"; break;
+                case DayOfWeek.Friday: nombreDia = "Viernes"; break;
+                case DayOfWeek.Saturday: nombreDia = "Sábado"; break;
+                case DayOfWeek.Sunday: nombreDia = "Domingo"; break;
+            }
+
+            var ahora = DateTime.Now.TimeOfDay;
+
+            ViewBag.HoraActual = ahora;
+
+            var programacion = db.ProgramacionHoraria
+                .Include(p => p.Programas)
+                .Include(p => p.Programas.Conductores)
+                .Where(p => p.DiaSemana == nombreDia)
+                .OrderBy(p => p.HoraInicio)
+                .ToList();
+
+            return View(programacion);
+        }
+
+    public ActionResult GrillaSemanal()
+    {
+        var programacion = db.ProgramacionHoraria
+            .Include(p => p.Programas)
+            .Include(p => p.Programas.Conductores)
+            .ToList();
+
+        return View(programacion);
+    }
+        private bool HayConflictoHorario(string dia, TimeSpan inicio, TimeSpan fin, int? ignorarProgramaId = null)
+        {
+            return db.ProgramacionHoraria
+                .Any(ph =>
+                    ph.DiaSemana == dia &&
+                    (ignorarProgramaId == null || ph.ProgramaId != ignorarProgramaId) &&
+                    (
+                        (inicio >= ph.HoraInicio && inicio < ph.HoraFin) ||  // empieza dentro
+                        (fin > ph.HoraInicio && fin <= ph.HoraFin) ||        // termina dentro
+                        (inicio <= ph.HoraInicio && fin >= ph.HoraFin)       // lo cubre completo
+                    )
+                );
+        }
+
+
     }
 }

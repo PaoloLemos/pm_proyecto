@@ -1,46 +1,72 @@
 ﻿@model proyect.Models.Usuarios
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles del Usuario";
 }
 
-<h2>Details</h2>
+<style>
+    
+    .btn-editar {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        text-align: center;
+        user-select: none;
+        background-color: #e0f3ff;
+        color: #007bff;
+        border: 1px solid #007bff;
+    }
 
-<div>
-    <h4>Usuarios</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+        .btn-editar:hover {
+            background-color: #007bff;
+            color: white;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+    .btn-volver {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        text-align: center;
+        user-select: none;
+        background-color: #ffe0e0;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+        .btn-volver:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+</style>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="w-100" style="max-width: 700px;">
+        <div class="p-4 shadow-lg rounded-4 bg-white">
+            <h3 class="text-center mb-4">Detalles del Usuario</h3>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contrasena)
-        </dt>
+            <dl class="row">
+                <dt class="col-5 fw-semibold text-end">Nombre:</dt>
+                <dd class="col-7">@Html.DisplayFor(model => model.Nombre)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contrasena)
-        </dd>
+                <dt class="col-5 fw-semibold text-end">Email:</dt>
+                <dd class="col-7">@Html.DisplayFor(model => model.Email)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Roles.Nombre)
-        </dd>
+                <dt class="col-5 fw-semibold text-end">Rol:</dt>
+                <dd class="col-7">@Html.DisplayFor(model => model.Roles.Nombre)</dd>
+            </dl>
 
-    </dl>
+            <div class="d-flex justify-content-between mt-4 gap-3">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn-editar flex-grow-1" })
+                @Html.ActionLink("Volver", "Index", null, new { @class = "btn-volver flex-grow-1" })
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

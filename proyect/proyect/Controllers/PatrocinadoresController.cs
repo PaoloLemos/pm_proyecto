@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,17 +47,39 @@ namespace proyect.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Descripcion,Plan")] Patrocinadores patrocinadores)
+
+      
+        public ActionResult Create(Patrocinadores patrocinador, HttpPostedFileBase ImagenFile)
         {
             if (ModelState.IsValid)
             {
-                db.Patrocinadores.Add(patrocinadores);
+                // 📦 Guardar imagen si se subió
+                if (ImagenFile != null && ImagenFile.ContentLength > 0)
+                {
+                    string carpeta = Server.MapPath("~/Content/imagenes/Patrocinadores/");
+                    if (!Directory.Exists(carpeta))
+                        Directory.CreateDirectory(carpeta);
+
+                    // nombre único por si suben con el mismo nombre
+                    string nombreArchivo = Guid.NewGuid().ToString() + Path.GetExtension(ImagenFile.FileName);
+                    string ruta = Path.Combine(carpeta, nombreArchivo);
+                    ImagenFile.SaveAs(ruta);
+
+                    // ✅ ESTA es la línea que guarda la URL relativa en la BD
+                    patrocinador.Imagen = "/Content/imagenes/Patrocinadores/" + nombreArchivo;
+                }
+
+                // 👉 Asegurate de esto, sin el link nunca va a aparecer
+                db.Patrocinadores.Add(patrocinador);
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
-            return View(patrocinadores);
+            return View(patrocinador);
         }
+
+
 
         // GET: Patrocinadores/Edit/5
         public ActionResult Edit(int? id)
@@ -78,16 +101,38 @@ namespace proyect.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Descripcion,Plan")] Patrocinadores patrocinadores)
+        public ActionResult Edit(Patrocinadores patrocinadores, HttpPostedFileBase ImagenFile)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(patrocinadores).State = EntityState.Modified;
+                var original = db.Patrocinadores.Find(patrocinadores.Id);
+                if (original == null)
+                    return HttpNotFound();
+
+                original.Nombre = patrocinadores.Nombre;
+                original.Descripcion = patrocinadores.Descripcion;
+                original.Plan = patrocinadores.Plan;
+
+                if (ImagenFile != null && ImagenFile.ContentLength > 0)
+                {
+                    string carpeta = Server.MapPath("~/Content/imagenes/Patrocinadores/");
+                    if (!Directory.Exists(carpeta))
+                        Directory.CreateDirectory(carpeta);
+
+                    string nombreArchivo = Path.GetFileName(ImagenFile.FileName);
+                    string ruta = Path.Combine(carpeta, nombreArchivo);
+                    ImagenFile.SaveAs(ruta);
+
+                    original.Imagen = "/Content/imagenes/Patrocinadores/" + nombreArchivo;
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(patrocinadores);
         }
+
 
         // GET: Patrocinadores/Delete/5
         public ActionResult Delete(int? id)
@@ -123,5 +168,11 @@ namespace proyect.Controllers
             }
             base.Dispose(disposing);
         }
+        public PartialViewResult Logos()
+        {
+            var patrocinadores = db.Patrocinadores.ToList();
+            return PartialView("_PatrocinadoresLogos", patrocinadores);
+        }
+
     }
 }

@@ -107,23 +107,21 @@
             </div>
         }
 
-        @* Comentarios de clientes *@
-        @if (customUser?.HasPermission("Ver Comentarios") == true)
-        {
+       
             <div class="col-md-4">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Revisar Comentarios</h5>
+                        <h5 class="card-title">Gestionar Conductores</h5>
                         <p class="card-text flex-grow-1">
-                            Consulta los comentarios que dejan los clientes en los programas.
+                            Consulta los Conductores .
                         </p>
-                        <a href="@Url.Action("Index","Comentarios")" class="btn btn-primary mt-auto">
-                            Ir a Comentarios
+                        <a href="@Url.Action("Index","Conductores")" class="btn btn-primary mt-auto">
+                            Ir a Conductores
                         </a>
                     </div>
                 </div>
             </div>
-        }
+        
 
     </div>
 </div>

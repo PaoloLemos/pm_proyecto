@@ -1,66 +1,132 @@
 ﻿@model proyect.Models.Clientes
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Cliente";
 }
 
-<h2>Edit</h2>
+<style>
+    .edit-container {
+        max-width: 600px;
+        margin: 80px auto 40px;
+        background: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
 
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Clientes</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    hr {
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 6px;
+        color: #555;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 1em;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .text-danger {
+        font-size: 0.9em;
+        margin-top: 4px;
+    }
+
+    .btn-group {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 24px;
+        margin: 0 8px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        transition: background-color 0.25s ease, color 0.25s ease;
+        border: none;
+    }
+
+    .btn-save {
+        background-color: #e0f3ff;
+        color: #007bff;
+        border: 1px solid #007bff;
+    }
+
+        .btn-save:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .btn-back {
+        background-color: #ffe0e0;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+    }
+
+        .btn-back:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+</style>
+
+<div class="edit-container" role="main">
+    <h2>Editar Cliente</h2>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.CI)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-            </div>
+            @Html.LabelFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
-            </div>
+            @Html.LabelFor(model => model.Apellido)
+            @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })
-            </div>
+            @Html.LabelFor(model => model.FechaNacimiento)
+            @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div class="btn-group">
+            <input type="submit" value="Guardar" class="btn btn-save" />
+            @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-back" })
         </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    }
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -1,69 +1,173 @@
 ﻿@model proyect.Models.Usuarios
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Usuario";
 }
 
-<h2>Edit</h2>
+<style>
+    .container-edit {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
 
+    .box-edit {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Usuarios</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+    h2 {
+        margin-bottom: 25px;
+        font-weight: 700;
+        color: #222;
+    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+    .form-horizontal .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        align-items: center;
+        text-align: left;
+    }
+
+    .form-horizontal label.control-label {
+        flex: 0 0 30%;
+        max-width: 30%;
+        font-weight: 600;
+        color: #444;
+        padding-right: 15px;
+    }
+
+    .form-horizontal .col-md-10 {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px 10px;
+        font-size: 1em;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .text-danger {
+        color: #dc3545;
+        margin-top: 5px;
+        font-size: 0.9em;
+    }
+
+    /* Botones iguales que las otras páginas */
+    .btn-editar {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        background-color: #e0f3ff;
+        color: #007bff;
+        border: 1px solid #007bff;
+        cursor: pointer;
+        border: none;
+        margin-right: 10px;
+    }
+
+        .btn-editar:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .btn-volver {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        background-color: #ffe0e0;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+        cursor: pointer;
+        border: none;
+    }
+
+        .btn-volver:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+    .form-actions {
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>
+
+<div class="container-edit">
+    <div class="box-edit">
+        <h2>Editar Usuario</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Contrasena, htmlAttributes: new { @class = "control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Contrasena, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Contrasena, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RolID, "Rol", htmlAttributes: new { @class = "control-label" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(
+                            model => model.RolID,
+                            new SelectList(ViewBag.Roles, "RolId", "Nombre", Model.RolID),
+                            "-- Seleccione un rol --",
+                            new { @class = "form-control" }
+                        )
+                        @Html.ValidationMessageFor(model => model.RolID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" value="Editar" class="btn-editar" />
+                    @Html.ActionLink("Volver", "Index", null, new { @class = "btn-volver" })
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Contrasena, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Contrasena, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Contrasena, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RolID, "Rol", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(
-                    model => model.RolID,
-                    new SelectList(ViewBag.Roles, "RolId", "Nombre", Model.RolID),
-                    "-- Seleccione un rol --",
-                    new { @class = "form-control" }
-                )
-                @Html.ValidationMessageFor(model => model.RolID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+        }
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

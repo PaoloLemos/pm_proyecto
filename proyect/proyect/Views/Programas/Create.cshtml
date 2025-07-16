@@ -63,44 +63,50 @@
         <div class="form-group">
             @Html.LabelFor(m => m.Programa.Nombre)
             @Html.TextBoxFor(m => m.Programa.Nombre, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Programa.Nombre, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.Programa.Descripcion)
             @Html.TextAreaFor(m => m.Programa.Descripcion, new { @class = "form-control", rows = 4 })
+            @Html.ValidationMessageFor(m => m.Programa.Descripcion, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.Label("Imagen del programa")
             <input type="file" name="ImagenFile" class="form-control" />
+            @Html.ValidationMessageFor(m => m.ImagenFile, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.Label("Asignar conductor existente")
             @Html.DropDownListFor(m => m.ConductorIdSeleccionado, new SelectList(Model.ConductoresDisponibles, "Value", "Text"), "-- Seleccionar conductor --", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ConductorIdSeleccionado, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.Label("Día de la semana")
-
             @Html.DropDownListFor(m => m.DiaSemana,
                 new SelectList(new[] {
                     "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"
                 }),
                 "-- Seleccionar día --",
                 new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.DiaSemana, "", new { @class = "text-danger" })
         </div>
-
 
         <div class="form-group">
             @Html.Label("Hora de inicio")
             @Html.TextBoxFor(m => m.HoraInicio, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+            @Html.ValidationMessageFor(m => m.HoraInicio, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
             @Html.Label("Hora de fin")
             @Html.TextBoxFor(m => m.HoraFin, "{0:hh\\:mm}", new { @class = "form-control", type = "time" })
+            @Html.ValidationMessageFor(m => m.HoraFin, "", new { @class = "text-danger" })
         </div>
+
 
         <div class="text-center">
             <input type="submit" value="Crear programa completo" />

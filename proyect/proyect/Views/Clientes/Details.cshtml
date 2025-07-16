@@ -4,47 +4,103 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    .details-container {
+        max-width: 600px;
+        margin: 80px auto 40px;
+        background: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
 
-<div>
-    <h4>Clientes</h4>
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    hr {
+        margin-bottom: 25px;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 10px 20px;
+        font-size: 1.1em;
+    }
+
+    dt {
+        font-weight: 600;
+        color: #555;
+    }
+
+    dd {
+        margin: 0;
+        color: #222;
+    }
+
+    .btn-group {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 24px;
+        margin: 0 8px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1em;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .btn-edit {
+        background-color: #e0f3ff;
+        color: #007bff;
+        border: 1px solid #007bff;
+    }
+
+        .btn-edit:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .btn-back {
+        background-color: #ffe0e0;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+    }
+
+        .btn-back:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+</style>
+
+<div class="details-container" role="main">
+    <h2>Detalles del Cliente</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.Nombre)</dt>
+        <dd>@Html.DisplayFor(model => model.Nombre)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Apellido)</dt>
+        <dd>@Html.DisplayFor(model => model.Apellido)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaNacimiento)
-        </dd>
-
+        <dt>@Html.DisplayNameFor(model => model.FechaNacimiento)</dt>
+        <dd>@Html.DisplayFor(model => model.FechaNacimiento)</dd>
     </dl>
+
+    <div class="btn-group">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.CI }, new { @class = "btn btn-edit" })
+        @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-back" })
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CI }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

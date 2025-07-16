@@ -11,13 +11,24 @@ namespace proyect.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Conductores
     {
         public int Id { get; set; }
+
         public Nullable<int> ProgramaId { get; set; }
+
+
+        [Required(ErrorMessage = "El nombre es obligatorio.")]
+        [StringLength(100)]
         public string Nombre { get; set; }
+
+      
         public string Bio { get; set; }
+
+     
+
         public string foto { get; set; }
     
         public virtual Programas Programas { get; set; }

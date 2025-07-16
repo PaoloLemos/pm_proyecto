@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,6 +19,7 @@ namespace proyect.Controllers
         public ActionResult Index()
         {
             var conductores = db.Conductores.Include(c => c.Programas);
+
             return View(conductores.ToList());
         }
 
@@ -48,17 +50,31 @@ namespace proyect.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProgramaId,Nombre,Bio")] Conductores conductores)
+       
+        public ActionResult Create(Conductores conductor, HttpPostedFileBase FotoFile)
         {
             if (ModelState.IsValid)
             {
-                db.Conductores.Add(conductores);
+                // SUBIR IMAGEN
+                if (FotoFile != null && FotoFile.ContentLength > 0)
+                {
+                    string carpeta = Server.MapPath("~/Content/imagenes/Conductores/");
+                    if (!Directory.Exists(carpeta))
+                        Directory.CreateDirectory(carpeta);
+
+                    string nombreArchivo = Path.GetFileName(FotoFile.FileName);
+                    string ruta = Path.Combine(carpeta, nombreArchivo);
+                    FotoFile.SaveAs(ruta);
+
+                    conductor.foto = "/Content/imagenes/Conductores/" + nombreArchivo;
+                }
+
+                db.Conductores.Add(conductor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProgramaId = new SelectList(db.Programas, "Id", "Nombre", conductores.ProgramaId);
-            return View(conductores);
+            return View(conductor);
         }
 
         // GET: Conductores/Edit/5

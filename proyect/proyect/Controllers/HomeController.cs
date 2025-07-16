@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyect.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,21 @@ namespace proyect.Controllers
 {
     public class HomeController : Controller
     {
-        [AllowAnonymous]
 
+
+        private VozDelEsteEntities db = new VozDelEsteEntities();
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            return View();
+
+
+            var programasRecientes = db.Programas
+          .OrderByDescending(p => p.Id)
+          .Take(3)
+          .ToList();
+
+
+            return View(programasRecientes);
         }
         [AllowAnonymous]
 

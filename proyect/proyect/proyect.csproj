@@ -193,6 +193,7 @@
     </Compile>
     <Compile Include="Models\CotizacionViewModel.cs" />
     <Compile Include="Models\currencyLayerResponse.cs" />
+    <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\Noticias.cs">
       <DependentUpon>VozDelEsteModel.tt</DependentUpon>
     </Compile>
@@ -267,6 +268,9 @@
     <Content Include="imagenes\clima\lluviasuave.jpg" />
     <Content Include="imagenes\clima\sensacion.jpg" />
     <Content Include="imagenes\clima\termometro.png" />
+    <Content Include="imagenes\Conductores\Davo.jpg" />
+    <Content Include="imagenes\Conductores\GustavoRipa.jpg" />
+    <Content Include="imagenes\Conductores\petiperfil.png" />
     <Content Include="imagenes\departamentos\artigas.png" />
     <Content Include="imagenes\departamentos\canelones.png" />
     <Content Include="imagenes\departamentos\cerrolargo.png" />
@@ -294,6 +298,8 @@
     <Content Include="imagenes\Noticias\estudiantes.jpg" />
     <Content Include="imagenes\Noticias\perro.jpg" />
     <Content Include="imagenes\Noticias\sequia.jpg" />
+    <Content Include="imagenes\Patrocinadores\JBL.png" />
+    <Content Include="imagenes\Patrocinadores\sony-logo.png" />
     <Content Include="imagenes\Programas\412.jpg" />
     <Content Include="imagenes\Programas\music-jpg.jpg" />
     <Content Include="imagenes\Programas\petinati.jpg" />
@@ -321,6 +327,7 @@
     <Content Include="Models\VozDelEsteModel.edmx.diagram">
       <DependentUpon>VozDelEsteModel.edmx</DependentUpon>
     </Content>
+    <Content Include="imagenes\Conductores\jorge.avif" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -346,8 +353,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\Delete.cshtml" />
@@ -390,12 +395,13 @@
     <Content Include="Views\Conductores\Details.cshtml" />
     <Content Include="Views\Conductores\Edit.cshtml" />
     <Content Include="Views\Conductores\Index.cshtml" />
+    <Content Include="Views\Programas\GrillaHoy.cshtml" />
+    <Content Include="Views\Programas\GrillaSemanal.cshtml" />
+    <Content Include="Views\Patrocinadores\_PatrocinadoresLogos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="imagenes\Clientes\" />
-    <Folder Include="imagenes\Conductores\" />
-    <Folder Include="imagenes\Patrocinadores\" />
     <Folder Include="Views\MenuAdmin\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,56 +1,95 @@
 ﻿@model proyect.Models.Noticias
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar noticia";
 }
 
-<h2>Delete</h2>
+<div class="delete-noticia">
+    <h1>¿Estás seguro de que deseas eliminar esta noticia?</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Noticias</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
+    <div class="info-noticia">
+        <h2>@Model.Titulo</h2>
+        <p class="fecha">@Model.FechaPublicacion.ToString("dd/MM/yyyy")</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
+        @if (!string.IsNullOrWhiteSpace(Model.Imagen))
+        {
+            <img src="@Model.Imagen" alt="Imagen de @Model.Titulo" class="imagen-noticia" />
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contenido)
-        </dt>
+        <div class="contenido">
+            <p>@Model.Contenido</p>
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contenido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaPublicacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaPublicacion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="text-center mt-4">
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-lg mx-2" />
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary btn-lg mx-2" })
         </div>
     }
 </div>
+
+<style>
+    .delete-noticia {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+        .delete-noticia h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #c00;
+        }
+
+    .info-noticia h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .fecha {
+        color: #777;
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .imagen-noticia {
+        max-width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+
+    .contenido {
+        font-size: 1.1em;
+        line-height: 1.6em;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        min-width: 140px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+    .mx-2 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+</style>
